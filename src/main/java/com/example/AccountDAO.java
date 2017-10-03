@@ -1,4 +1,3 @@
-SpringBootEncodeApplication.java
 package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
