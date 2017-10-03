@@ -75,7 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.loginPage("/login");
 		http.formLogin()
 		.defaultSuccessUrl("/Home", true)
-		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/"))
 		.logoutSuccessUrl("/")
 		.deleteCookies("JSESSIONID")
 		.invalidateHttpSession(true).permitAll()
@@ -93,6 +93,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			config.setJdbcUrl(dbUrl);
 			return new HikariDataSource(config);
 		}
+	}
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+	    return new BCryptPasswordEncoder();
 	}
 }
 
