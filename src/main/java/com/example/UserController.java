@@ -6,7 +6,9 @@ import java.io.Serializable;
 
 @Data
 public class AccountForm implements Serializable {
-    private String email;
+    private String custid;
+    private String custname;
+    private String orgname;
     private String password;
 }
 */
