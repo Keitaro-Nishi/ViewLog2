@@ -1,4 +1,4 @@
-package com.example;
+/*package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -37,3 +37,4 @@ public class SpringBootEncodeApplication implements CommandLineRunner {
         System.out.println("一致しなかったよ");
     }
 }
+*/
