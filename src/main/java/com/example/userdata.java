@@ -1,48 +1,30 @@
-/*package com.example;
+/*
+package com.example;
 
+import lombok.Data;
 
-public class userdata {
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 
+@Entity
+@Table(name = "userdata")
+@Data
+public class Account implements Serializable {
+    @Id
+    @GeneratedValue
+    private Integer id;
 
-    private String custid;
-    private String username;
-    private String orgname;
+    @Column(nullable=false)
+    private String email;
+
+    @Column(nullable=false, length=20)
     private String password;
-    //private String role;
 
-    public userdata() {
-    }
+    @Column(nullable=false, updatable=false)
+    private Date created_at;
 
-    public String getCustid() {
-        return custid;
-    }
-
-    public void setCustid(String custid) {
-        this.custid = custid;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getOrgname() {
-        return orgname;
-    }
-
-    public void setOrgname(String orgname) {
-        this.orgname = orgname;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-}*/
+    @Column(nullable=false)
+    private Date updated_at;
+}
+*/
