@@ -1,12 +1,8 @@
 /*package com.example;
 
-import com.example.userdata;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import test.model.Account;
 
-
-	@Repository
-	public interface UserRepository extends JpaRepository<userdata,String>{
-	}
-
+public interface AccountRepository extends JpaRepository<Account, Integer> {
+}
 */
