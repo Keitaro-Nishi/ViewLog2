@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/layout :: base_header(~{::link},'Home')">
@@ -15,7 +17,9 @@
 		<input type="button" value="アカウント登録" onclick="location.href='/signup'">
 
 
-
+		<sec:authorize access="hasAuthority('ADMIN')">
+			<h2>Admin Menu</h2>
+		</sec:authorize>
 
 	</div>
 	<br>
