@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ page contentType="text/html; charset=UTF-8" taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/layout :: base_header(~{::link},'index')">
@@ -14,7 +15,10 @@
 		<input type="button" value="(●●●●●●)"
 			onclick="location.href='/Account'"
 			style="margin-top: 30px; margin-left: 10px; text-align: center; width: 400px; height: 70px; border-radius: 0.5em; background-color: #4682b4; font-size: 30px;">
-		<input type="button" value="アカウント登録" onclick="location.href='/signup'">
+		<sec:authorize access="hasAuthority('ADMIN')">
+			<input type="button" value="アカウント登録"
+				onclick="location.href='/signup'">
+		</sec:authorize>
 	</div>
 	</div>
 </body>
