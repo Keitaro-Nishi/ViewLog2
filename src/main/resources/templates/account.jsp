@@ -1,31 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="base_header(links, title)">
+<title th:text="${title==null}?'ViewLog' : ${title}+' - ViewLog'">ViewLog</title>
+	<link rel="stylesheet" type="text/css"
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+	<link href="/stylesheets/common.css" rel="stylesheet" />
 
-<!DOCTYPE html>
-<html>
-<body>
-<div class="container">
-    <h1>アカウント管理</h1>
-<table border ="1">
-  <tr>
-    <th>ID</th>
-    <th>ユーザー名</th>
-    <th>組織名</th>
-    <th>Role</th>
-  </tr>
-<c:forEach var="record" items="${records}">
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
-  <tr>
-    <td><c:out value="${record.custid}"/></td>
-    <td><c:out value="${record.username}"/></td>
-    <td><c:out value="${record.orgname}"/></td>
-    <td><c:out value="${record.role}"/></td>
-  </tr>
+	<th:block th:replace="${links}" />
 
-</c:forEach>
-</table>
+</head>
 
-
-</div>
-</body>
+	<nav class="navbar navbar-default navbar-static-top navbar-inverse" th:fragment="header">
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li class="active">
+				<a href="/home.jsp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-th-large"></span> Menu<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="/Account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+						<li><a href="/index"><span class="glyphicon glyphicon-user"></span> User</a></li>
+						<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
 </html>

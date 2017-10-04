@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fa
@@ -6,7 +7,7 @@
 </head>
 
 <body>
-	<div th:replace="resources/templates/fragments/layout :: header"></div>
+	<div th:replace="account :: header"></div>
 	<div align="center">
 		<input type="button" value="ViewLog"
 			onclick="location.href='/logview'"
