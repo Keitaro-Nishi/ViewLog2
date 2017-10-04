@@ -18,9 +18,6 @@
 		<input type="button" value="アカウント登録" onclick="location.href='/signup'">
 
 
-		<sec:authorize access="hasAuthority('ADMIN')">
-			<h2>Admin Menu</h2>
-		</sec:authorize>
 
 	</div>
 	<br>
