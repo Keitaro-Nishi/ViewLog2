@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<div th:replace="fragments/layout :: header"></div>
+	<div th:replace="resources/templates/fragments/layout :: header"></div>
 	<div align="center">
 		<input type="button" value="ViewLog"
 			onclick="location.href='/logview'"
