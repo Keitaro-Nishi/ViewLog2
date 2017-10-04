@@ -67,14 +67,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		.authorizeRequests()
 		.antMatchers("/login").permitAll()
-		.antMatchers("/home.jsp").hasAnyAuthority("ADMIN","USER")
+		.antMatchers("/Home").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/Account/**").hasAuthority("ADMIN")
 		//.antMatchers("/User/**").hasAuthority("ADMIN")
 		.and()
 		.formLogin()
 		.loginPage("/login");
 		http.formLogin()
-		.defaultSuccessUrl("/home.jsp", true)
+		.defaultSuccessUrl("/Home", true)
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		.logoutSuccessUrl("/")
 		.deleteCookies("JSESSIONID")

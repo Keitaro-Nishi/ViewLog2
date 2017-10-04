@@ -46,9 +46,9 @@ public class Main {
 		return "login";
 	}
 
-	@RequestMapping("/home.jsp")
+	@RequestMapping("/Home")
 	String Home() {
-		return "home.jsp";
+		return "Home";
 	}
 
 	@RequestMapping("/signup")
