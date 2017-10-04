@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8"　%>
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="base_header(links, title)">
