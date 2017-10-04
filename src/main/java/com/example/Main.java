@@ -70,4 +70,10 @@ public class Main {
 	String logview() {
 		return "logview";
 	}
+
+	@RequestMapping("/home.jsp")
+	String Home() {
+		return "home.jsp";
+	}
+
 }
