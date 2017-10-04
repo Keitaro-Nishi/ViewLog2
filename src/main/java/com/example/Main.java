@@ -72,7 +72,7 @@ public class Main {
 	}
 
 	@RequestMapping("/home.jsp")
-	String Home() {
+	String home() {
 		return "home.jsp";
 	}
 
