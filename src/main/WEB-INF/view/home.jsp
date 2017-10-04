@@ -2,7 +2,7 @@
 	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/layout :: base_header(~{::link},'index')">
+<head th:replace="layout :: base_header(~{::link},'home')">
 <link href="/stylesheets/jquery.bootgrid.css" rel="stylesheet" />
 </head>
 
