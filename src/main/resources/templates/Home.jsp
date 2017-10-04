@@ -15,10 +15,11 @@
 		<input type="button" value="(●●●●●●)"
 			onclick="location.href='/Account'"
 			style="margin-top: 30px; margin-left: 10px; text-align: center; width: 400px; height: 70px; border-radius: 0.5em; background-color: #4682b4; font-size: 30px;">
+		<input type="button" value="アカウント登録" onclick="location.href='/signup'">
+
 
 		<sec:authorize access="hasAuthority('ADMIN')">
-			<input type="button" value="アカウント登録"
-				onclick="location.href='/signup'">
+			<h2>Admin Menu</h2>
 		</sec:authorize>
 
 	</div>
