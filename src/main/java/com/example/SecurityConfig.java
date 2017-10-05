@@ -72,7 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		//.antMatchers("/User/**").hasAuthority("ADMIN")
 		.and()
 		.formLogin()
-		.loginPage("/home.jsp");
+		.loginPage("/login");
 		http.formLogin()
 		.defaultSuccessUrl("/Home", true)
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
