@@ -66,10 +66,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-		.antMatchers("/**").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/login").permitAll()
 		.antMatchers("/Home").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/Account").hasAuthority("ADMIN")
+		.antMatchers("/**").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/logout").hasAnyAuthority("ADMIN","USER")
 		//.antMatchers("/User/**").hasAuthority("ADMIN")
 		.and()
