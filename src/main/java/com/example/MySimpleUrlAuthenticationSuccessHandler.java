@@ -1,4 +1,3 @@
-/*
 package com.example;
 
 import java.io.IOException;
@@ -69,12 +68,12 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
             throw new IllegalStateException();
         }
     }
-*/
+
     /**
      * Removes temporary authentication-related data which may have been stored in the session
      * during the authentication process.
      */
-/*
+
     protected final void clearAuthenticationAttributes(final HttpServletRequest request) {
         final HttpSession session = request.getSession(false);
 
@@ -94,4 +93,3 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
     }
 
 }
-*/
