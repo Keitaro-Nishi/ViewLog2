@@ -76,7 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.formLogin()
 		.loginPage("/login");
 		http.formLogin()
-		.defaultSuccessUrl("/Home", false)
+		.defaultSuccessUrl("/Home", true)
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		.logoutSuccessUrl("/")
 		.deleteCookies("JSESSIONID")
