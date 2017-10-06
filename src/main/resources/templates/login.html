@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-md-push-3 col-md-6">
 				<div class="form-wrap">
-					<div class="text-center">
+					<div class="text-center" id="acc">
 						<h1>Login</h1>
 					</div>
 					<br />
@@ -51,6 +51,14 @@
 			$('#id').focus();
 		});
 		-->
+
+			String Auth = new String "USER";
+			if (Auth.equals("USER")) {
+				document.getElementById("acc").style.display="none";
+			} else {
+				document.getElementById("acc").style.display="block";
+			}
+
 	</script>
 </body>
 </html>
