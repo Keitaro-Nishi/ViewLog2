@@ -29,13 +29,13 @@
 					class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
 					<li><a href="/Account"><span
-							class="glyphicon glyphicon-th-list"></span>Log 1</a></li>
+							class="glyphicon glyphicon-th-list"></span> Log 1</a></li>
 					<li><a href="/index"><span
-							class="glyphicon glyphicon-picture"></span>Log 2</a></li>
+							class="glyphicon glyphicon-picture"></span> Log 2</a></li>
 					<li><a href="/logout"><span
-							class="glyphicon glyphicon-align-left"></span>Data</a></li>
+							class="glyphicon glyphicon-align-left"></span> Data</a></li>
 					<li><a href="/Account"><span
-							class="glyphicon glyphicon-user"></span>Account</a></li>
+							class="glyphicon glyphicon-user"></span> Account</a></li>
 				</ul></li>
 			<li class="active"><a href="/logout"><span
 					class="glyphicon glyphicon-log-out"></span> Log out</a></li>
@@ -47,11 +47,16 @@
 	<script type="text/javascript" src="/javascript/jquery.bootgrid.js" th:src="@{/javascript/jquery.bootgrid.js}" th:inline="javascript"></script>
 	<script type="text/javascript" th:inline="javascript">
 
-		String Auth = new String "USER";
-		if (Auth.equals("USER")) {
-			document.getElementById("acc").style.display="none";
-		} else {
-			document.getElementById("acc").style.visibility = "block";
-		}
+	function hyoji1(num)
+	{
+	  if (0 == 0)
+	  {
+	    document.getElementById("disp").style.display="block";
+	  }
+	  else
+	  {
+	    document.getElementById("disp").style.display="none";
+	  }
+	}
 	</script>
 </html>
