@@ -45,13 +45,11 @@
 	<script type="text/javascript" src="/javascript/jquery.bootgrid.js" th:src="@{/javascript/jquery.bootgrid.js}" th:inline="javascript"></script>
 	<script type="text/javascript" th:inline="javascript">
 
-String Auth = new String "USER";
-if (Auth.equals("USER")){
-  document.getElementById("acc").style.display="hidden";
-}
-else
-{
-  document.getElementById("acc").style.display="block";
-}
-</script>
+		String Auth = new String "USER";
+		if (Auth.equals("USER")) {
+			document.getElementById("acc").style.visibility = "hidden";
+		} else {
+			document.getElementById("acc").style.visibility = "block";
+		}
+	</script>
 </html>
