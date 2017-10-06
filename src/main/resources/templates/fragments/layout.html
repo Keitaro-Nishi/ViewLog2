@@ -28,12 +28,14 @@
 					class="glyphicon glyphicon-th-large"></span> Menu<span
 					class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
-					<li id="acc"><a href="/Account"><span
-							class="glyphicon glyphicon-user"></span> Account</a></li>
+					<li><a href="/Account"><span
+							class="glyphicon glyphicon-user"></span> Log1</a></li>
 					<li><a href="/index"><span
-							class="glyphicon glyphicon-user"></span> User</a></li>
-					<li id="acc"><a href="/logout"><span
-							class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+							class="glyphicon glyphicon-user"></span> Log 2</a></li>
+					<li><a href="/logout"><span
+							class="glyphicon glyphicon-log-out"></span> Data</a></li>
+					<li><a href="/Account"><span
+							class="glyphicon glyphicon-user"></span> Account</a></li>
 				</ul></li>
 			<li class="active"><a href="/logout"><span
 					class="glyphicon glyphicon-log-out"></span> Log out</a></li>
@@ -49,7 +51,7 @@
 		if (Auth.equals("USER")) {
 			document.getElementById("acc").style.display="none";
 		} else {
-			document.getElementById("acc").style.display="block";
+			document.getElementById("acc").style.visibility = "block";
 		}
 	</script>
 </html>
