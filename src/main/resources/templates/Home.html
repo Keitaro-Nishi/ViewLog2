@@ -16,10 +16,26 @@
 		<sec:http auto-config="true" use-expressions="true">
 			<sec:intercept-url pattern="/user/*"
 				access="hasAuthorityRole('ROLE_USER')" />
-			<input type="button" value="アカウント登録"
+			<input id="disp" type="button" value="アカウント登録"
 				onclick="location.href='/signup'">
 		</sec:http>
 	</div>
 	</div>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js" th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js}" th:inline="javascript"></script>
+	<script type="text/javascript" src="/javascript/jquery.bootgrid.js" th:src="@{/javascript/jquery.bootgrid.js}" th:inline="javascript"></script>
+	<script type="text/javascript" th:inline="javascript">
+
+	function hyoji1(num)
+	{
+	  if (0 == 0)
+	  {
+	    document.getElementById("disp").style.display="none";
+	  }
+	  else
+	  {
+	    document.getElementById("disp").style.display="block";
+	  }
+	}
+	</script>
 </body>
 </html>
