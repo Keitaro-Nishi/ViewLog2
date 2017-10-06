@@ -17,7 +17,7 @@
 
 <nav class="navbar navbar-default navbar-static-top navbar-inverse"
 	th:fragment="header">
-	<div class="container" id="acc">
+	<div class="container">
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="/Home"><span
 					class="glyphicon glyphicon-home"></span> Home</a></li>
@@ -47,11 +47,11 @@
 
 int a = 1;
 if (a == 1){
-  document.getElementById("acc").style.display="none";
+  document.getElementById("acc").list-style-type="none";
 }
 else
 {
-  document.getElementById("acc").style.display="block";
+  document.getElementById("acc").list-style-type="block";
 }
 </script>
 </html>
