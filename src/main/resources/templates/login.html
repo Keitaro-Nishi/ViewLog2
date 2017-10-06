@@ -5,7 +5,7 @@
 </head>
 <body>
 	<div th:replace="fragments/layout :: header"></div>
-	<!--
+
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-push-3 col-md-6">
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 	</div>
-	-->
+
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
@@ -57,11 +57,9 @@
 
 		var score = 90;
 		if (score >= 80) {
-				document.write("合格です！おめでとうございます！");
-				//document.getElementById("acc").style.display="none";
+				document.getElementById("acc").style.display="none";
 			} else {
-				document.write("残念！不合格です。");
-				//document.getElementById("acc").style.display="block";
+				document.getElementById("acc").style.display="block";
 			}
 
 	</script>
