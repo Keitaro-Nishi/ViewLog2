@@ -31,7 +31,6 @@
 								class="form-control" placeholder="Password を入力して下さい"
 								style="margin-top: 30px;" />
 						</div>
-						<br />
 						<button id="btn-login" class="btn btn-primary btn-block">ログイン</button>
 					</form>
 				</div>
@@ -52,11 +51,11 @@
 		});
 		-->
 
-			String Auth = new String "USER";
+			String Auth = "USER";
 			if (Auth.equals("USER")) {
-				document.getElementById("btn-login").style.display="none";
+				document.getElementById("acc").style.display="none";
 			} else {
-				document.getElementById("btn-login").style.display="block";
+				document.getElementById("acc").style.display="block";
 			}
 
 	</script>
