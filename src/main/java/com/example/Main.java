@@ -61,8 +61,23 @@ public class Main {
 		return "Account";
 	}
 
+	@Controller
 	@RequestMapping("/index")
 	String index() {
+		function hyoji2(st) {
+			Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+			if (principal instanceof UserDetails) {
+			  String username = ((UserDetails)principal).getUsername();
+			} else {
+			  String username = principal.toString();
+			}
+			if (st.equals("ADMIN")) {
+				document.getElementById("visi").style.visibility = "visible";
+			} else {
+				document.getElementById("visi").style.visibility = "hidden";
+			}
+		}
 		return "index";
 	}
 
