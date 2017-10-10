@@ -61,20 +61,23 @@ public class Main {
 		return "Account";
 	}
 
-	@Controller
 	@RequestMapping("/index")
-	function hyoji2(st) {
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-		if (principal instanceof UserDetails) {
-			String username = ((UserDetails)principal).getUsername();
-		} else {
-			String username = principal.toString();
+	if (principal instanceof UserDetails) {
+	  String reserve = ((UserDetails)principal).getReserve();
+	} else {
+	  String reserve = principal.toString();
+	}
+	function hyoji2(reserve)
+	{
+		if (reserve.equals("USER"))
+		{
+			document.getElementById("visi").style.visibility="visible";
 		}
-		if (st.equals("ADMIN")) {
-			document.getElementById("visi").style.visibility = "visible";
-		} else {
-			document.getElementById("visi").style.visibility = "hidden";
+		else
+		{
+			document.getElementById("visi").style.visibility="hidden";
 		}
 	}
 	String index() {
