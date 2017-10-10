@@ -8,15 +8,13 @@
 	<div id="visi">この文章を表示したり消したりします。</div>
 
 	<form>
-		<input type="button" value="表示" onclick="hyoji2(0)"> <input
-			type="button" value="非表示" onclick="hyoji2(1)">
+		<input type="button" value="表示" onclick="st(USER)"> <input
+			type="button" value="非表示" onclick="st(ADMIN)">
 	</form>
 
 	<script>
-		int num = 1;
-		function hyoji2(num) {
-			//int num = 1;
-			if (num == 0) {
+		function hyoji2(st) {
+			if (st.equals(ADMIN)) {
 				document.getElementById("visi").style.visibility = "visible";
 			} else {
 				document.getElementById("visi").style.visibility = "hidden";
