@@ -62,24 +62,6 @@ public class Main {
 	}
 
 	@RequestMapping("/index")
-	Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-	if (principal instanceof UserDetails) {
-	  String reserve = ((UserDetails)principal).getReserve();
-	} else {
-	  String reserve = principal.toString();
-	}
-	function hyoji2(reserve)
-	{
-		if (reserve.equals("USER"))
-		{
-			document.getElementById("visi").style.visibility="visible";
-		}
-		else
-		{
-			document.getElementById("visi").style.visibility="hidden";
-		}
-	}
 	String index() {
 		return "index";
 	}
@@ -93,5 +75,4 @@ public class Main {
 	String home() {
 		return "home.jsp";
 	}
-
 }
