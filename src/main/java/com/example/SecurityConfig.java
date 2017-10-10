@@ -1,4 +1,3 @@
-
 package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -48,10 +47,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Qualifier("dataSource")
 	private DataSource dataSource;
 
-
 	private static final String USER_QUERY = "SELECT custid, password,role FROM userdata WHERE custid = ?";
 	private static final String ROLE_QUERY = "SELECT custid, reserve FROM userdata WHERE custid = ?";
-
 
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -60,7 +57,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.usersByUsernameQuery(USER_QUERY)
 		.authoritiesByUsernameQuery(ROLE_QUERY);
 	}
-
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
