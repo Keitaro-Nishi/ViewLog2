@@ -36,10 +36,10 @@
 							class="glyphicon glyphicon-picture"></span> Log 2</a></li>
 					<li><a href="/logout"><span
 							class="glyphicon glyphicon-align-left"></span> Data</a></li>
-					<li sec:authorize="hasAuthority('ADMIN')"><a href="/Account"><span
+					<li id="visi"><a href="/Account"><span
 							class="glyphicon glyphicon-user"></span> Account</a></li>
-					<imput type="button" onclick="hyoji2(0)"> 表示</li>
-					<imput type="button" onclick="hyoji2(1)"> 非表示</li>
+					<li><a type="button" onclick="hyoji2(0)"> 表示</a></li>
+					<li><a type="button" onclick="hyoji2(1)"> 非表示</a></li>
 				</ul></li>
 			<li class="active"><a href="/logout"><span
 					class="glyphicon glyphicon-log-out"></span> Log out</a></li>
