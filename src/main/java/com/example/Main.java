@@ -63,21 +63,21 @@ public class Main {
 
 	@Controller
 	@RequestMapping("/index")
-	String index() {
-		function hyoji2(st) {
-			Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	function hyoji2(st) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-			if (principal instanceof UserDetails) {
-			  String username = ((UserDetails)principal).getUsername();
-			} else {
-			  String username = principal.toString();
-			}
-			if (st.equals("ADMIN")) {
-				document.getElementById("visi").style.visibility = "visible";
-			} else {
-				document.getElementById("visi").style.visibility = "hidden";
-			}
+		if (principal instanceof UserDetails) {
+			String username = ((UserDetails)principal).getUsername();
+		} else {
+			String username = principal.toString();
 		}
+		if (st.equals("ADMIN")) {
+			document.getElementById("visi").style.visibility = "visible";
+		} else {
+			document.getElementById("visi").style.visibility = "hidden";
+		}
+	}
+	String index() {
 		return "index";
 	}
 
