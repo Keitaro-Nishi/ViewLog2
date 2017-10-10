@@ -16,19 +16,9 @@
 		<sec:http auto-config="true" use-expressions="true">
 			<sec:intercept-url pattern="/user/*"
 				access="hasAuthorityRole('ROLE_USER')" />
-			<input id="disp" type="button" value="アカウント登録"
+			<input type="button" value="アカウント登録"
 				onclick="location.href='/signup'">
 		</sec:http>
 	</div>
 	</div>
-	<script>
-		function hyoji2(num) {
-			int num = 1;
-			if (num == 0) {
-				document.getElementById("disp").style.visibility = "visible";
-			} else {
-				document.getElementById("disp").style.visibility = "hidden";
-			}
-		}
-	</script>
 </html>
