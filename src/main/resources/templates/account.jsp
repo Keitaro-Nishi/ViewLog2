@@ -1,39 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
-<!doctype html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="base_header(links, title)">
-<title th:text="${title==null}?'ViewLog' : ${title}+' - ViewLog'">ViewLog</title>
-	<link rel="stylesheet" type="text/css"
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
-	<link href="/stylesheets/common.css" rel="stylesheet" />
-
-	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-	<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
-	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-
-	<th:block th:replace="${links}" />
-
+<head th:replace="fragments/layout :: base_header(~{::link},'index')">
+<link href="/stylesheets/jquery.bootgrid.css" rel="stylesheet" />
 </head>
+<body>
+	<div th:replace="fragments/layout :: header"></div>
+	<div id="disp">この文章を表示したり消したりします。</div>
 
-	<nav class="navbar navbar-default navbar-static-top navbar-inverse" th:fragment="header">
-		<div class="container">
-			<ul class="nav navbar-nav">
-				<li class="active">
-				<a href="/home.jsp"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-th-large"></span> Menu<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="/Account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
-						<li><a href="/index"><span class="glyphicon glyphicon-user"></span> User</a></li>
-						<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
+	<form>
+		<input type="button" value="表示" onclick="hyoji1(0)"> <input
+			type="button" value="非表示" onclick="hyoji1(1)">
+	</form>
+
+	<script>
+		function hyoji1(num) {
+			if (num == 0) {
+				document.getElementById("disp").style.display = "block";
+			} else {
+				document.getElementById("disp").style.display = "none";
+			}
+		}
+	</script>
+</body>
 </html>
