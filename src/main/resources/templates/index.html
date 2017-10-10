@@ -4,20 +4,19 @@
 <link href="/stylesheets/jquery.bootgrid.css" rel="stylesheet" />
 </head>
 <body>
-	<div th:replace="fragments/layout :: header"></div>
-	<div id="disp">この文章を表示したり消したりします。</div>
+	<div id="visi">この文章を表示したり消したりします。</div>
 
 	<form>
-		<input type="button" value="表示" onclick="hyoji1(0)"> <input
-			type="button" value="非表示" onclick="hyoji1(1)">
+		<input type="button" value="表示" onclick="hyoji2(0)"> <input
+			type="button" value="非表示" onclick="hyoji2(1)">
 	</form>
 
 	<script>
-		function hyoji1(num) {
+		function hyoji2(num) {
 			if (num == 0) {
-				document.getElementById("disp").style.display = "block";
+				document.getElementById("visi").style.visibility = "visible";
 			} else {
-				document.getElementById("disp").style.display = "none";
+				document.getElementById("visi").style.visibility = "hidden";
 			}
 		}
 	</script>
