@@ -44,4 +44,26 @@
 		</ul>
 	</div>
 </nav>
+<form>
+<input type="button" value="表示" onclick="hyoji2(0)">
+<input type="button" value="非表示" onclick="hyoji2(1)">
+</form>
+
+<script>
+
+function hyoji2(num)
+{
+  if (num == 0)
+  {
+    document.getElementById("visi").style.visibility="visible";
+  }
+  else
+  {
+    document.getElementById("visi").style.visibility="hidden";
+  }
+}
+
+</script>
+
+</body>
 </html>
