@@ -1,3 +1,4 @@
+/*
 package com.example;
 
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
@@ -17,3 +18,4 @@ public class MenuController {
         return "/index";
     }
 }
+*/
