@@ -1,3 +1,4 @@
+/*
 package com.example;
 
 import java.util.ArrayList;
@@ -34,3 +35,4 @@ public class LoginUser extends User {
         empNm = emp.empNm;
     }
 }
+*/
