@@ -1,4 +1,4 @@
-package com.example;
+/*
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,3 +34,4 @@ public class SecurityContextHolderSampleServlet extends HttpServlet {
         System.out.println("  " + auth.getCredentials());
     }
 }
+*/
