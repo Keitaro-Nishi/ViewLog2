@@ -61,12 +61,12 @@ public class Main {
 	String Account() {
 		return "Account";
 	}
-/*
+	/*
 	@RequestMapping("/index")
 	String index() {
 		return "index";
 	}
-*/
+	 */
 	@RequestMapping("/logview")
 	String logview() {
 		return "logview";
@@ -77,16 +77,13 @@ public class Main {
 		return "home.jsp";
 	}
 
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String index(Principal principal, Model model) {
+		Authentication authentication = (Authentication) principal;
+		UserInfoEntity user = (UserInfoEntity) authentication.getPrincipal();
 
-	@Controller
-	public class HogeController {
-	  @RequestMapping(value = "/hoge", method = RequestMethod.GET)
-	  public String index(Principal principal, Model model) {
-	    Authentication authentication = (Authentication) principal;
-	    UserInfoEntity user = (UserInfoEntity) authentication.getPrincipal();
-
-	    model.addAttribute("user", user);
-	    return "/index";
-	  }
+		model.addAttribute("user", user);
+		return "/index";
 	}
+}
 }
