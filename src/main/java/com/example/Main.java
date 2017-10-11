@@ -77,11 +77,15 @@ public class Main {
 		return "home.jsp";
 	}
 
-    @RequestMapping("index")
-    public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
-        String username = httpServletRequest.getRemoteUser();
-        User user = userRepository.getOne(username);
-        modelMap.addAttribute("user", user);
-        return "index";
-    }
+	@Controller
+	public class HogeController {
+	  @RequestMapping(value = "/hoge", method = RequestMethod.GET)
+	  public String index(Principal principal, Model model) {
+	    Authentication authentication = (Authentication) principal;
+	    UserInfoEntity user = (UserInfoEntity) authentication.getPrincipal();
+
+	    model.addAttribute("user", user);
+	    return "/index";
+	  }
+	}
 }
