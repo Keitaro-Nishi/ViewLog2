@@ -60,12 +60,12 @@ public class Main {
 	String Account() {
 		return "Account";
 	}
-
+/*
 	@RequestMapping("/index")
 	String index() {
 		return "index";
 	}
-
+*/
 	@RequestMapping("/logview")
 	String logview() {
 		return "logview";
@@ -75,4 +75,12 @@ public class Main {
 	String home() {
 		return "home.jsp";
 	}
+
+    @RequestMapping("index")
+    public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
+        String username = httpServletRequest.getRemoteUser();
+        User user = userRepository.getOne(username);
+        modelMap.addAttribute("user", user);
+        return "index";
+    }
 }

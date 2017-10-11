@@ -1,32 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/layout :: base_header(~{::link},'index')">
-<link href="/stylesheets/jquery.bootgrid.css" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8" />
+    <title>index</title>
 </head>
 <body>
-
-<div id="visi">この文章を表示したり消したりします。</div>
-
-<form>
-<input type="button" value="表示" onclick="hyoji2(0)">
-<input type="button" value="非表示" onclick="hyoji2(1)">
-</form>
-
-<script>
-
-function hyoji2(num)
-{
-  if (num == 0)
-  {
-    document.getElementById("visi").style.visibility="visible";
-  }
-  else
-  {
-    document.getElementById("visi").style.visibility="hidden";
-  }
-}
-
-</script>
-
+    <h1>ユーザ情報</h1>
+    <p>現在、下記のユーザでログインしています。</p>
+    <dl>
+        <dt>username</dt>
+        <dd th:text="${user.username}">username</dd>
+        <dt>password</dt>
+        <dd th:text="${user.password}">password</dd>
+    </dl>
 </body>
 </html>
