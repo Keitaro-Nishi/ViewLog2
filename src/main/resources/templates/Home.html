@@ -16,7 +16,7 @@
 		<sec:http auto-config="true" use-expressions="true">
 			<sec:intercept-url pattern="/user/*"
 				access="hasAuthorityRole('ROLE_USER')" />
-			<input id="visi" type="button" value="アカウント登録"
+			<input id="vis" type="button" value="アカウント登録"
 				onclick="location.href='/signup'">
 		</sec:http>
 	</div>
@@ -33,11 +33,11 @@ function hyoji2(num)
 {
   if (num == 0)
   {
-    document.getElementById("visi").style.visibility="visible";
+    document.getElementById("vis").style.visibility="visible";
   }
   else
   {
-    document.getElementById("visi").style.visibility="hidden";
+    document.getElementById("vis").style.visibility="hidden";
   }
 }
 
