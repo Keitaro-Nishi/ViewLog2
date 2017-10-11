@@ -29,18 +29,19 @@
 
 <script>
 
- 	 function hyoji2(num)
+function hyoji2(num)
+{
+  if (num == 0)
   {
-    if (num == 0)
-    {
-     document.getElementById("vis").style.display="block";
-    }
-    else
-    {
-     document.getElementById("vis").style.display="none";
-    }
+    document.getElementById("vis").style.visibility="visible";
   }
+  else
+  {
+    document.getElementById("vis").style.visibility="hidden";
+  }
+}
 
 </script>
+
 </body>
 </html>
