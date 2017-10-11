@@ -77,6 +77,7 @@ public class Main {
 		return "home.jsp";
 	}
 
+
 	@Controller
 	public class HogeController {
 	  @RequestMapping(value = "/hoge", method = RequestMethod.GET)
