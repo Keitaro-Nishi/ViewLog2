@@ -61,12 +61,12 @@ public class Main {
 	String Account() {
 		return "Account";
 	}
-	/*
+
 	@RequestMapping("/index")
 	String index() {
 		return "index";
 	}
-	 */
+
 	@RequestMapping("/logview")
 	String logview() {
 		return "logview";
@@ -76,7 +76,7 @@ public class Main {
 	String home() {
 		return "home.jsp";
 	}
-
+/*
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Principal principal, Model model) {
 		Authentication authentication = (Authentication) principal;
@@ -85,5 +85,6 @@ public class Main {
 		model.addAttribute("user", user);
 		return "/index";
 	}
+	*/
 }
 
