@@ -61,12 +61,12 @@ public class Main {
 	String Account() {
 		return "Account";
 	}
-
+/*
 	@RequestMapping("/index")
 	String index() {
 		return "index";
 	}
-
+*/
 	@RequestMapping("/logview")
 	String logview() {
 		return "logview";
