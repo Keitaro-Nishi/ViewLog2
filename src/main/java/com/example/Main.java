@@ -76,6 +76,14 @@ public class Main {
 	String home() {
 		return "home.jsp";
 	}
+
+    @RequestMapping("index")
+    public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
+        String username = httpServletRequest.getRemoteUser();
+        User user = userRepository.getOne(username);
+        modelMap.addAttribute("user", user);
+        return "index";
+    }
 /*
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Principal principal, Model model) {
