@@ -62,7 +62,7 @@ public class Main {
 		return "Account";
 	}
 
-	@RequestMapping("/index")
+	@RequestMapping("/Account/index")
 	String index() {
 		return "index";
 	}
@@ -77,7 +77,7 @@ public class Main {
 		return "home.jsp";
 	}
 /*
- * ログインユーザ　取得したい
+ * ログインユーザ　取得したいYO
  *
     @RequestMapping("index")
     public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
