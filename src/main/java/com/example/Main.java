@@ -80,11 +80,12 @@ public class Main {
  * ログインユーザ　取得したいYO
  */
     @RequestMapping("index")
-    public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
-        String username = httpServletRequest.getRemoteUser();
-        User user = userRepository.getOne(username);
-        modelMap.addAttribute("index", user);
-        return "index";
+    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+    if (principal instanceof UserDetails) {
+      String username = ((UserDetails)principal).getUsername();
+    } else {
+      String username = principal.toString();
     }
 /*
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
