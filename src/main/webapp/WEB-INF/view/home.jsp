@@ -1,18 +1,29 @@
 <%@ page language="java" pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"% >
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags " %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="css/default.css" type="text/css" />
-<title>トップページ</title>
+<meta charset="utf-8">
+<title>Home</title>
 </head>
 <body>
-<a href="logout">ログアウト</a>
-<br />
-ログインユーザ：<sec:authentication property="principal.username" />
-
-
+    <div id="wrapper">
+        <h1>Account Information</h1>
+        <table>
+            <tr>
+                <th>Username</th>
+                <td>${f:h(account.username)}</td>
+            </tr>
+            <tr>
+                <th>First name</th>
+                <td>${f:h(account.firstName)}</td>
+            </tr>
+            <tr>
+                <th>Last name</th>
+                <td>${f:h(account.lastName)}</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
