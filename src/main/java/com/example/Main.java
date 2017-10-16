@@ -77,17 +77,23 @@ public class Main {
 	String home() {
 		return "home.jsp";
 	}
-/*
- * ログインユーザ　取得したいYO
- *
-    @RequestMapping("index")
-    public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
-        String username = httpServletRequest.getRemoteUser();
-        User user = userRepository.getOne(username);
-        modelMap.addAttribute("user", user);
-        return "index";
-    }
-
+	/*
+	 * ログインユーザ　取得したいYO
+	 */
+	@RequestMapping("index")
+	public static String getUsername() {
+		Authentication authentication = SecurityContextHolder.getContext()
+				.getAuthentication(); // (1)
+		if (authentication != null) {
+			Object principal = authentication.getPrincipal(); // (2)
+			if (principal instanceof UserDetails) {
+				return ((UserDetails) principal).getReserve(); // (3)
+			}
+			return (String) principal.toString();
+		}
+		return null;
+	}
+	/*
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Principal principal, Model model) {
 		Authentication authentication = (Authentication) principal;
@@ -96,6 +102,6 @@ public class Main {
 		model.addAttribute("index", user);
 		return "/index";
 	}
-*/
+	 */
 }
 
