@@ -18,6 +18,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.authentication.encoding.BasePasswordEncoder;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -78,16 +79,15 @@ public class Main {
 	}
 /*
  * ログインユーザ　取得したいYO
- */
+ *
     @RequestMapping("index")
-    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-    if (principal instanceof UserDetails) {
-      String username = ((UserDetails)principal).getUsername();
-    } else {
-      String username = principal.toString();
+    public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
+        String username = httpServletRequest.getRemoteUser();
+        User user = userRepository.getOne(username);
+        modelMap.addAttribute("user", user);
+        return "index";
     }
-/*
+
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Principal principal, Model model) {
 		Authentication authentication = (Authentication) principal;
