@@ -44,6 +44,19 @@
 		</ul>
 	</div>
 	<script>
+	public static String getUsername() {
+    Authentication authentication = SecurityContextHolder.getContext()
+            .getAuthentication(); // (1)
+    if (authentication != null) {
+        Object principal = authentication.getPrincipal(); // (2)
+        if (principal instanceof UserDetails) {
+            return ((UserDetails) principal).getReserve(); // (3)
+        }
+        return (String) principal.toString();
+    }
+    return null;
+}
+
  	 function hyoji1(num)
   {
     if (num == 0)
