@@ -75,7 +75,7 @@ public class Main {
 
 	@RequestMapping("/home.jsp")
 	String home() {
-		return "home.jsp";
+		return "home";
 	}
 	/*
 	 * ログインユーザ　取得したいYO
