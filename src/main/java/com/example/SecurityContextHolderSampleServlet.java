@@ -1,37 +1,48 @@
-/*
+import lombok.AllArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import java.util.Collection;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-import static java.util.stream.Collectors.*;
+@AllArgsConstructor
+public final class AppUserDetail implements UserDetails {
 
-@WebServlet("/authentication")
-public class SecurityContextHolderSampleServlet extends HttpServlet {
+    private final AppUser appUser;
+
+    private final Collection<? extends GrantedAuthority> authorities;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println("[authorities]");
-        System.out.println("  " + auth.getAuthorities().stream()
-                                    .map(GrantedAuthority::getAuthority)
-                                    .collect(joining("\n  ")));
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return authorities;
+    }
 
-        WebAuthenticationDetails details = (WebAuthenticationDetails) auth.getDetails();
-        System.out.println("[details]");
-        System.out.println("  IP Address : " + details.getRemoteAddress());
-        System.out.println("  Session ID : " + details.getSessionId());
+    @Override
+    public String getPassword() {
+        return appUser.getPassword();
+    }
 
-        UserDetails principal = (UserDetails) auth.getPrincipal();
-        System.out.println("[principal]");
-        System.out.println("  username : " + principal.getUsername());
-        System.out.println("  password : " + principal.getPassword());
+    @Override
+    public String getUsername() {
+        return appUser.getStaffName();
+    }
 
-        System.out.println("[credentials]");
-        System.out.println("  " + auth.getCredentials());
+    @Override
+    public boolean isAccountNonExpired() {
+        return appUser.isEnabled();
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return appUser.isEnabled();
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return appUser.isEnabled();
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return appUser.isEnabled();
     }
 }
-*/
