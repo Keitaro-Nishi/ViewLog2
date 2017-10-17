@@ -1,3 +1,6 @@
+<!--
 <sec:http auto-config="true" use-expressions="true">
 	<sec:intercept-url pattern="/Account/**" access="hasAuthority('USER')" />
 </sec:http>
+
+-->
