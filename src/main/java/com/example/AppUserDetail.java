@@ -35,8 +35,17 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
-@RequestMapping(path = "/Home", method = RequestMethod.GET)
-public ModelAndView showResults(final HttpServletRequest request, Principal principal) {
-	final String currentUser = principal.getName();
-	System.out.println(currentUser);
+@Controller
+@SpringBootApplication
+public class AppUserDetail {
+
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(AppUserDetail.class, args);
+	}
+
+	@RequestMapping(path = "/Home", method = RequestMethod.GET)
+	public ModelAndView showResults(final HttpServletRequest request, Principal principal) {
+		final String currentUser = principal.getName();
+		System.out.println(currentUser);
+	}
 }
