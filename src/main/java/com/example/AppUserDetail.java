@@ -1,3 +1,4 @@
+/*
 package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -49,3 +50,4 @@ public class AppUserDetail {
 		System.out.println(currentUser);
 	}
 }
+*/
