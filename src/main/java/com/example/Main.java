@@ -93,15 +93,11 @@ public class Main {
 		}
 		return null;
 	}
-	/*
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String index(Principal principal, Model model) {
-		Authentication authentication = (Authentication) principal;
-		UserInfoEntity user = (UserInfoEntity) authentication.getPrincipal();
 
-		model.addAttribute("index", user);
-		return "/index";
+	@RequestMapping(path = "/Home", method = RequestMethod.GET)
+	public ModelAndView showResults(final HttpServletRequest request, Principal principal) {
+	       final String currentUser = principal.getName();
+	       System.out.println(currentUser);
 	}
-	 */
 }
 
