@@ -79,7 +79,7 @@ public class Main {
 	}
 	/*
 	 * ログインユーザ　取得したいYO
-	 */
+	 *
 	@RequestMapping("index")
 	public static String getUsername() {
 		Authentication authentication = SecurityContextHolder.getContext()
@@ -93,11 +93,6 @@ public class Main {
 		}
 		return null;
 	}
-
-	@RequestMapping(path = "/Home", method = RequestMethod.GET)
-	public ModelAndView showResults(final HttpServletRequest request, Principal principal) {
-	       final String currentUser = principal.getName();
-	       System.out.println(currentUser);
-	}
+	*/
 }
 
