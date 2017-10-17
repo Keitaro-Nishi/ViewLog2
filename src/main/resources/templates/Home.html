@@ -15,7 +15,7 @@
 
 		<sec:http auto-config="true" use-expressions="true">
 			<sec:intercept-url pattern="/user/*"
-				access="hasAuthorityRole('USER')" />
+				access="hasAuthority('USER')" />
 			<input id="vis" type="button" value="アカウント登録"
 				onclick="location.href='/signup'">
 		</sec:http>
