@@ -1,4 +1,3 @@
-/*
 package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -36,18 +35,43 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
-@Controller
-@SpringBootApplication
-public class AppUserDetail {
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(AppUserDetail.class, args);
-	}
+public class MyUserDetailsService implements UserDetailsService {
+    private final Map<String, UserDetails> usersList;
 
-	@RequestMapping(path = "/Home", method = RequestMethod.GET)
-	public ModelAndView showResults(final HttpServletRequest request, Principal principal) {
-		final String currentUser = principal.getName();
-		System.out.println(currentUser);
-	}
+    public MyUserDetailsService() {
+        Collection<GrantedAuthority> authorityList;
+        final SimpleGrantedAuthority supervisorAuthority = new SimpleGrantedAuthority("supervisor");
+        final SimpleGrantedAuthority userAuthority = new SimpleGrantedAuthority("user");
+        usersList = new TreeMap<String, UserDetails>();
+
+        authorityList = new ArrayList<GrantedAuthority>();
+        authorityList.add(supervisorAuthority);
+        authorityList.add(userAuthority);
+        usersList.put("admin", new User("admin", "admin", authorityList));
+
+        authorityList = new ArrayList<GrantedAuthority>();
+        authorityList.add(userAuthority);
+        usersList.put("peter", new User("peter", "password123", authorityList));
+
+        //probably don't use this in production
+        for(Map.Entry<String, UserDetails> user : usersList.entrySet()){
+            logger.info(user.getValue().toString());
+        }
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username)throws UsernameNotFoundException {
+        UserDetails ud = usersList.get(username);
+        if (ud != null) {
+            logger.info("loadUserByUsername: found match, returning "
+                    + ud.getUsername() + ":" + ud.getPassword() + ":"
+                    + ud.getAuthorities().toString());
+            return new User(ud.getUsername(), ud.getPassword(),
+                    ud.getAuthorities());
+        }
+
+        logger.info("loadUserByUsername: did not find match, throwing UsernameNotFoundException");
+        throw new UsernameNotFoundException(username);
+    }
 }
-*/
