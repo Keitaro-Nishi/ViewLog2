@@ -1,4 +1,3 @@
-/*
 package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -70,4 +69,3 @@ public class MyUserDetailsService implements UserDetailsService {
 		throw new UsernameNotFoundException(username);
 	}
 }
-*/
