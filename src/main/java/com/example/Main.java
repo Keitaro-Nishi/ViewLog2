@@ -81,7 +81,7 @@ public class Main {
 	String home() {
 		return "home";
 	}
-/*
+
 	public UserDetails getLoggedInUser(){
 
 		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -100,6 +100,6 @@ public class Main {
 		}
 		return null;
 	}
-*/
+
 }
 
