@@ -1,5 +1,4 @@
-/*
-package com.example;
+/package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,6 +19,7 @@ import org.springframework.security.authentication.encoding.BasePasswordEncoder;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -54,4 +54,3 @@ public UserDetails getLoggedInUser(){
 	}
 	return null;
 }
-*/
