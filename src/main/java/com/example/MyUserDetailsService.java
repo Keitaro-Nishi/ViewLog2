@@ -22,6 +22,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -57,7 +58,7 @@ public class MyUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username)throws UsernameNotFoundException {
         UserDetails ud = usersList.get(username);
         if (ud != null) {
-            logger.info("loadUserByUsername: found match, returning "
+            System.out.println("User"
                     + ud.getUsername() + ":" + ud.getPassword() + ":"
                     + ud.getAuthorities().toString());
             return new User(ud.getUsername(), ud.getPassword(),
