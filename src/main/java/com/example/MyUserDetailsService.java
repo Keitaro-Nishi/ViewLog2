@@ -43,27 +43,6 @@ import java.util.Map;
 public class MyUserDetailsService implements UserDetailsService {
     private final Map<String, UserDetails> usersList;
 
-    public MyUserDetailsService() {
-        Collection<GrantedAuthority> authorityList;
-        final SimpleGrantedAuthority supervisorAuthority = new SimpleGrantedAuthority("supervisor");
-        final SimpleGrantedAuthority userAuthority = new SimpleGrantedAuthority("user");
-        usersList = new TreeMap<String, UserDetails>();
-
-        authorityList = new ArrayList<GrantedAuthority>();
-        authorityList.add(supervisorAuthority);
-        authorityList.add(userAuthority);
-        usersList.put("admin", new User("admin", "admin", authorityList));
-
-        authorityList = new ArrayList<GrantedAuthority>();
-        authorityList.add(userAuthority);
-        usersList.put("peter", new User("peter", "password123", authorityList));
-
-        //probably don't use this in production
-        for(Map.Entry<String, UserDetails> user : usersList.entrySet()){
-            logger.info(user.getValue().toString());
-        }
-    }
-
     @Override
     public UserDetails loadUserByUsername(String custname)throws UsernameNotFoundException {
         UserDetails ud = usersList.get(custname);
