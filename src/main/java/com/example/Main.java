@@ -77,22 +77,24 @@ public class Main {
 	String home() {
 		return "home";
 	}
-	/*
-	 * ログインユーザ　取得したいYO
-	 *
-	@RequestMapping("index")
-	public static String getUsername() {
-		Authentication authentication = SecurityContextHolder.getContext()
-				.getAuthentication(); // (1)
-		if (authentication != null) {
-			Object principal = authentication.getPrincipal(); // (2)
-			if (principal instanceof UserDetails) {
-				return ((UserDetails) principal).getReserve(); // (3)
+
+	public UserDetails getLoggedInUser(){
+
+		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (auth != null && auth.isAuthenticated() && !(auth instanceof AnonymousAuthenticationToken))
+		{
+			if(auth.getDetails() !=null)
+				System.out.println(auth.getDetails().getClass());
+			if( auth.getDetails() instanceof UserDetails)
+			{
+				System.out.println("UserDetails");
 			}
-			return (String) principal.toString();
+			else
+			{
+				System.out.println("!UserDetails");
+			}
 		}
 		return null;
 	}
-	*/
 }
 
