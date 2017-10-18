@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Helo Page</title>
+<title>Hello Page</title>
 </head>
 <body>
         <h1>Hello!</h1>

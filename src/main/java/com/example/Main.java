@@ -77,11 +77,11 @@ public class Main {
 		return "logview";
 	}
 
-	@RequestMapping("/home.jsp")
+	@RequestMapping("/home")
 	String home() {
 		return "home";
 	}
-/*
+	/*
 	public UserDetails getLoggedInUser(){
 
 		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -100,5 +100,5 @@ public class Main {
 		}
 		return null;
 	}
-*/
+	 */
 }
