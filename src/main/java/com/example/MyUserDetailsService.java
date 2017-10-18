@@ -74,6 +74,6 @@ public class MyUserDetailsService implements UserDetailsService {
         }
 
         logger.info("loadUserByUsername: did not find match, throwing UsernameNotFoundException");
-        throw new UsernameNotFoundException(username);
+        throw new UsernameNotFoundException(custname);
     }
 }
