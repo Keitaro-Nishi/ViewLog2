@@ -63,14 +63,14 @@ public class MyUserDetailsService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username)throws UsernameNotFoundException {
-        UserDetails ud = usersList.get(username);
+    public UserDetails loadUserByUsername(String custname)throws UsernameNotFoundException {
+        UserDetails ud = usersList.get(custname);
         if (ud != null) {
             logger.info("loadUserByUsername: found match, returning "
-                    + ud.getUsername() + ":" + ud.getPassword() + ":"
-                    + ud.getAuthorities().toString());
+                    + ud.getCustname() + ":" + ud.getPassword() + ":"
+                    + ud.getReserve().toString());
             return new User(ud.getUsername(), ud.getPassword(),
-                    ud.getAuthorities());
+                    ud.getReserve());
         }
 
         logger.info("loadUserByUsername: did not find match, throwing UsernameNotFoundException");
