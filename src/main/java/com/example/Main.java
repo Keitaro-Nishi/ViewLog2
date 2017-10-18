@@ -51,12 +51,12 @@ public class Main {
 	String login() {
 		return "login";
 	}
-/*
+
 	@RequestMapping("/Home")
 	String Home() {
 		return "Home";
 	}
-*/
+
 	@RequestMapping("/signup")
 	String signup() {
 		return "signup";
