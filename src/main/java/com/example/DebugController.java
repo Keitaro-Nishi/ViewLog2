@@ -1,3 +1,4 @@
+/*
 package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,3 +55,4 @@ public UserDetails getLoggedInUser(){
 	}
 	return null;
 }
+*/
