@@ -54,22 +54,18 @@ import java.util.logging.SimpleFormatter;
 public class MyUserDetailsService implements UserDetailsService {
 	private final Map<String, UserDetails> usersList;
 
-	@RequestMapping("/Home")
 	@Override
-	String Home() {
-		public UserDetails loadUserByUsername(String username)throws UsernameNotFoundException {
-			UserDetails ud = usersList.get(username);
-			if (ud != null) {
-				System.out.println("User"
-						+ ud.getUsername() + ":" + ud.getPassword() + ":"
-						+ ud.getAuthorities().toString());
-				return new User(ud.getUsername(), ud.getPassword(),
-						ud.getAuthorities());
-			}
-
-			System.out.println("loadUserByUsername: did not find match, throwing UsernameNotFoundException");
-			throw new UsernameNotFoundException(username);
+	public UserDetails loadUserByUsername(String username)throws UsernameNotFoundException {
+		UserDetails ud = usersList.get(username);
+		if (ud != null) {
+			System.out.println("User"
+					+ ud.getUsername() + ":" + ud.getPassword() + ":"
+					+ ud.getAuthorities().toString());
+			return new User(ud.getUsername(), ud.getPassword(),
+					ud.getAuthorities());
 		}
-		return "Home";
+
+		System.out.println("loadUserByUsername: did not find match, throwing UsernameNotFoundException");
+		throw new UsernameNotFoundException(username);
 	}
 }
