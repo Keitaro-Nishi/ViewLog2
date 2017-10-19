@@ -83,12 +83,14 @@ public class Main {
 	String home() {
 		return "home";
 	}
+
 /*  Userクラス  */
-    @RequestMapping("index")
+/*
     public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getRemoteUser();
         User user = userRepository.getOne(username);
         modelMap.addAttribute("index", user);
         return "index";
     }
+*/
 }
