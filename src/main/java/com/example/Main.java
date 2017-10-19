@@ -81,24 +81,5 @@ public class Main {
 	String home() {
 		return "home";
 	}
-	/*
-	public UserDetails getLoggedInUser(){
 
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if (auth != null && auth.isAuthenticated() && !(auth instanceof AnonymousAuthenticationToken))
-		{
-			if(auth.getDetails() !=null)
-				System.out.println(auth.getDetails().getClass());
-			if( auth.getDetails() instanceof UserDetails)
-			{
-				System.out.println("UserDetails");
-			}
-			else
-			{
-				System.out.println("!UserDetails");
-			}
-		}
-		return null;
-	}
-	 */
 }
