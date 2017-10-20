@@ -98,7 +98,7 @@ public class Main {
 	      }
 
 	      model.put("records", output);
-	      return "db";
+	      return "index";
 	    } catch (Exception e) {
 	      model.put("message", e.getMessage());
 	      return "error";
