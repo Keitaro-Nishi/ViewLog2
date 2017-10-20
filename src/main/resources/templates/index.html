@@ -3,15 +3,17 @@
 <head th:replace="fragments/layout :: base_header(~{::link},'index')">
 <link href="/stylesheets/jquery.bootgrid.css" rel="stylesheet" />
 </head>
+
 <body>
-<div th:replace="fragments/layout :: header"></div>
-    <h1>ユーザ情報</h1>
-    <p>現在、下記のユーザでログインしています。</p>
-    <dl>
-        <dt>username</dt>
-        <dd th:text="${user.username}">username</dd>
-        <dt>password</dt>
-        <dd th:text="${user.password}">password</dd>
-    </dl>
+
+	<div th:replace="fragments/layout :: header"></div>
+
+<div class="container">
+  <h1>Database Output</h1>
+  <ul th:each="record : ${records}">
+    <li th:text="${record}"/>
+  </ul>
+</div>
+
 </body>
 </html>
