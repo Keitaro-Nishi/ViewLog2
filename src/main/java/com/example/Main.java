@@ -113,6 +113,7 @@ public class Main {
 		}
 	}
 	@Bean
+	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
 		if (dbUrl == null || dbUrl.isEmpty()) {
 			return new HikariDataSource();
