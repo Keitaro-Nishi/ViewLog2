@@ -7,24 +7,13 @@
 <body>
 	<div th:replace="fragments/layout :: header"></div>
 	<div align="center">
-		<input type="button" value="チャットボットログ"
-			onclick="location.href='/logview'"
-			style="margin-top: 30px; text-align: center; width: 400px; height: 70px; border-radius: 0.5em; background-color: #778899; font-size: 30px; font-color: black;">
-		<br>
-		<input type="button" value="フォトログ"
-			onclick="location.href='/Account'"
-			style="margin-top: 30px; text-align: center; width: 400px; height: 70px; border-radius: 0.5em; background-color: #4682b4; font-size: 30px;">
-		<br>
-		<input type="button" value="ランキング"
-			onclick="location.href='/logview'"
-			style="margin-top: 30px; text-align: center; width: 400px; height: 70px; border-radius: 0.5em; background-color: #778899; font-size: 30px; font-color: black;">
-		<br>
-		<input type="button" value="アカウント"
-			onclick="location.href='/Account'"
-			style="margin-top: 30px; text-align: center; width: 400px; height: 70px; border-radius: 0.5em; background-color: #4682b4; font-size: 30px;">
-		<br>
 		<button onclick="location.href='/logview'" class="button5" type="submit">チャットボットログ</button>
-
+		<br>
+		<button onclick="location.href='/logview'" class="button5" type="submit">フォトログ</button>
+		<br>
+		<button onclick="location.href='/logview'" class="button5" type="submit">ランキング</button>
+		<br>
+		<button onclick="location.href='/Account'" class="button5" type="submit">アカウント</button>
 		</sec:http>
 	</div>
 	</div>
