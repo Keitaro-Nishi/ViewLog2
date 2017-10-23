@@ -68,7 +68,7 @@ public class User{
     public String getCustname() {
         return custname;
     }
-    public void setUsername(String custname) {
+    public void setCustname(String custname) {
         this.custname = custname;
     }
 
