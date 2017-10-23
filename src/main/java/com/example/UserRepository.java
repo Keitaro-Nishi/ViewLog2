@@ -1,3 +1,4 @@
+/*
 package com.example;
 
 import org.springframework.stereotype.Repository;
@@ -12,3 +13,4 @@ public interface UserRepository extends JpaRepository<User, String> {
 	//public User getOne(String custname);
 
 }
+*/
