@@ -47,9 +47,9 @@ public class User{
     // JPA requirement
     protected User() {}
 
-    public User(String custid, String username, String orgname,  String password ) {
+    public User(String custid, String custname, String orgname,  String password ) {
     	this.custid = custid;
-    	this.username = username;
+    	this.custname = custname;
     	this.orgname = orgname;
         this.password = password;
         //this.enabled = true;
