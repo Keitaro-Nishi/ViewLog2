@@ -128,11 +128,12 @@ public class Main {
 	}
 
 /*  Userクラス  */
-
+/*
     public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
         String custname = httpServletRequest.getRemoteUser();
         User user = UserRepository.getOne(custname);
         modelMap.addAttribute("index", user);
         return "index";
     }
+*/
 }
