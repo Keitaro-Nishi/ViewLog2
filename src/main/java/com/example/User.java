@@ -34,7 +34,7 @@ public class User{
     private String custid;
 
     @Column(nullable = false, unique = true)
-    private String username;
+    private String custname;
 
     @Column(nullable = false, unique = true)
     private String orgname;
