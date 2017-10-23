@@ -133,5 +133,4 @@ public class Main {
         modelMap.addAttribute("index", user);
         return "index";
     }
-
 }
