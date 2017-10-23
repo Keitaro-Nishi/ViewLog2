@@ -129,7 +129,7 @@ public class Main {
 
     public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getRemoteUser();
-        User user = userRepository.getOne(username);
+        User user = UserRepository.getOne(username);
         modelMap.addAttribute("index", user);
         return "index";
     }
