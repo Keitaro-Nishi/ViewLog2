@@ -134,6 +134,14 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- User.java -->
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<repositories>
@@ -145,12 +153,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-				<!-- User.java -->
-		<dependency>
-	  <groupId>javax.persistence</groupId>
-	  <artifactId>persistence-api</artifactId>
-	  <version>1.0.2</version>
-	  </dependency>
 	</repositories>
 
 
