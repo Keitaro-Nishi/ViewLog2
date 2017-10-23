@@ -9,6 +9,6 @@ import com.example.User;
 @EnableJpaRepositories
 public interface UserRepository extends JpaRepository<User, String> {
 
-	public User getOne(String custname);
+	//public User getOne(String custname);
 
 }
