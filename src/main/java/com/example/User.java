@@ -65,8 +65,8 @@ public class User{
     }
 
     //@Override
-    public String getUsername() {
-        return username;
+    public String getCustname() {
+        return custname;
     }
     public void setUsername(String custname) {
         this.custname = custname;
