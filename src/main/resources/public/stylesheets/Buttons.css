@@ -36,7 +36,8 @@ button.button5:hover {
 }
 
 @media all and (-webkit-min-device-pixel-ratio:0)and (min-resolution: .001dpcm) {
-body{
-    background: #cccccc;
+{
+    chrome{
+    magin-left: -4px;
   }
 }
