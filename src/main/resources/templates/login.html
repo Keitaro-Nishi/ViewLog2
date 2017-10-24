@@ -16,7 +16,7 @@
 					<br/>
 					<form role="form" action="#" th:action="@{/login}" method="post"
 						id="login-form" autocomplete="off">
-						<div class="form-group"
+						<div class="form-group" style="width:200px;"
 							th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
 							<p class="form-control-static text-danger"
 								th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></p>
