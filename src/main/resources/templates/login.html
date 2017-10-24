@@ -15,7 +15,7 @@
 					</div>
 					<br/>
 					<form role="form" action="#" th:action="@{/login}" method="post"
-						id="login-form" autocomplete="off" sytle="width:100px;">
+						id="login-form" autocomplete="off">
 						<div class="form-group"
 							th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
 							<p class="form-control-static text-danger"
@@ -33,7 +33,7 @@
 								style="margin-top: 30px;" />
 						</div>
 						<br>
-						<button id="btn-login" class="btn btn-primary btn-block">ログイン</button>
+						<button id="btn-login" class="btn btn-primary btn-block" sytle="width:100px;">ログイン</button>
 					</form>
 				</div>
 			</div>
