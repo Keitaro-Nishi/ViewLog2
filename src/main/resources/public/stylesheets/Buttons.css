@@ -37,7 +37,7 @@ button.button5:hover {
 
 @media all and (-webkit-min-device-pixel-ratio:0)and (min-resolution: .001dpcm) {
 {
-    chrome{
+button.chrome{
     margin-left: -4px;
   }
 }
