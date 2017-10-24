@@ -3,6 +3,8 @@ button.button5 {
 	width: 400px;
 	height: 70px;
 
+	margin: 0px auto;
+
     /* 文字サイズを1.4emに指定 */
     font-size: 1.4em;
 
