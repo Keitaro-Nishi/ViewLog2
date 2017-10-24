@@ -35,6 +35,15 @@ button.button5:hover {
 	color: #fff;
 }
 
+.recommended {
+	text-decoration: none;
+	display: inline;
+	width: auto;
+	height: auto;
+	line-height: 1;
+	vertical-align: baseline;
+}
+
 body {
 	overflow-y: scroll;
 }
