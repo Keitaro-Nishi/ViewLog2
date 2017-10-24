@@ -36,7 +36,7 @@ button.button5:hover {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0){
-body.sample{
+body{
     background: #cccccc;
   }
 }
