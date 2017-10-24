@@ -35,7 +35,7 @@ button.button5:hover {
 	color: #fff;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0){
+@media all and (-webkit-min-device-pixel-ratio:0)and (min-resolution: .001dpcm) {
 body{
     background: #cccccc;
   }
