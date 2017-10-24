@@ -4,7 +4,7 @@ button.button5 {
 	height: 70px;
 
 	/* 中央 */
-	overflow-y:scroll;
+	overflow:scroll;
 
     /* 文字サイズを1.4emに指定 */
     font-size: 1.4em;
