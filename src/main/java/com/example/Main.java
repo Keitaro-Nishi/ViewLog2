@@ -127,7 +127,7 @@ public class Main {
 
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
-				output.add(rs.getTimestamp("*"));
+				output.add(rs.getObject("*"));
 			}
 
 			model.put("customers", output);
