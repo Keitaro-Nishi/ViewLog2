@@ -123,11 +123,11 @@ public class Main {
 			Statement stmt = connection.createStatement();
 			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
 			//stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-			ResultSet rs = stmt.executeQuery("SELECT * FROM userdata");
+			ResultSet rs = stmt.executeQuery("SELECT custid, custname, orgname, reserve FROM userdata");
 
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
-				output.add(rs.getObject("*"));
+				output.add(rs.getString("custid, custname, orgname, reserve"));
 			}
 
 			model.put("customers", output);
