@@ -16,12 +16,12 @@ public class EchoController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewInput(Model model) {
 
-		List<String> nameList = new ArrayList<String>();
-		nameList.add("藤本祥");
-		nameList.add("中川淳一");
-		nameList.add("安倍隆弘");
+		String name = new String();
+		name.add("藤本祥");
+		//nameList.add("中川淳一");
+		//nameList.add("安倍隆弘");
 
-		model.addAttribute("nameList",nameList);
+		model.addAttribute("name",name);
 
 		return "table";
 	}
