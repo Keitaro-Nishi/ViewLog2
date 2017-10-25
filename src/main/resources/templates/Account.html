@@ -26,60 +26,79 @@
 				<td>2017/09/27</td>
 				<td>11111</td>
 				<td>テスト</td>
-				<td>テストです</td>
+				<ul th:each="record : ${records}">
+				<td th:text="${record}>テストです</td>
 			</tr>
 		</tbody>
 	</table>
 	<br>
-	<input id="btn_del" type="button" value="選択行の削除" onclick="drow()"
-		style="display: none; position: absolute; left: 50px;"/>
-	<input id="btn_sup" type="button" value="アカウント登録" onclick="location.href='/Account/signup'"
-		style="position: absolute; right: 50px;"/>
+	<input id="
+					btn_del" type="button" value="選択行の削除" onclick="drow()"
+					style="display: none; position: absolute; left: 50px;" />
+				<input id="btn_sup" type="button" value="アカウント登録"
+					onclick="location.href='/Account/signup'"
+					style="position: absolute; right: 50px;" />
 
 
 
-	<script type="text/javascript"
-		src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"
-		th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js}"
-		th:inline="javascript"></script>
-	<script type="text/javascript" src="/javascript/jquery.bootgrid.js"
-		th:src="@{/javascript/jquery.bootgrid.js}" th:inline="javascript"></script>
-	<script type="text/javascript" th:inline="javascript">
-		/*<![CDATA[*/
-		var rowIds = [];
-		$(function() {
-			//alert("ｊｓはじまり");
-			//var h = $(window).height();
-			//$('#wrap').css('display','none');
-			//$('#loader-bg ,#loader').height(h).css('display','block');
+				<script type="text/javascript"
+					src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"
+					th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js}"
+					th:inline="javascript"></script>
+				<script type="text/javascript" src="/javascript/jquery.bootgrid.js"
+					th:src="@{/javascript/jquery.bootgrid.js}" th:inline="javascript"></script>
+				<script type="text/javascript" th:inline="javascript">
+					/*<![CDATA[*/
+					var rowIds = [];
+					$(function() {
+						//alert("ｊｓはじまり");
+						//var h = $(window).height();
+						//$('#wrap').css('display','none');
+						//$('#loader-bg ,#loader').height(h).css('display','block');
 
-			$('#btn_del').css('display', 'block');
+						$('#btn_del').css('display', 'block');
 
-		});
-
-		$(document).ready(function() { //全ての読み込みが完了したら実行
-			$('#grid-basic').bootgrid({
-				selection : true,
-				multiSelect : true,
-				rowSelect : true,
-				keepSelection : true,
-			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
-				for (var i = 0; i < rows.length; i++) {
-					rowIds.push(rows[i].no);
-				}
-				//alert("Select: " + rowIds.join(","));
-			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
-				for (var i = 0; i < rows.length; i++) {
-					rowIds.some(function(v, ii) {
-						if (v == rows[i].no)
-							rowIds.splice(ii, 1);
 					});
-					//rowIds.push(rows[i].no);
-				}
-				//alert("Deselect: " + rowIds.join(","));
-			});
-		});
-		/*]]>*/
-	</script>
+
+					$(document)
+							.ready(
+									function() { //全ての読み込みが完了したら実行
+										$('#grid-basic')
+												.bootgrid({
+													selection : true,
+													multiSelect : true,
+													rowSelect : true,
+													keepSelection : true,
+												})
+												.on(
+														"selected.rs.jquery.bootgrid",
+														function(e, rows) {
+															for (var i = 0; i < rows.length; i++) {
+																rowIds
+																		.push(rows[i].no);
+															}
+															//alert("Select: " + rowIds.join(","));
+														})
+												.on(
+														"deselected.rs.jquery.bootgrid",
+														function(e, rows) {
+															for (var i = 0; i < rows.length; i++) {
+																rowIds
+																		.some(function(
+																				v,
+																				ii) {
+																			if (v == rows[i].no)
+																				rowIds
+																						.splice(
+																								ii,
+																								1);
+																		});
+																//rowIds.push(rows[i].no);
+															}
+															//alert("Deselect: " + rowIds.join(","));
+														});
+									});
+					/*]]>*/
+				</script>
 </body>
 </html>

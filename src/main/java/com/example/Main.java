@@ -96,21 +96,21 @@ public class Main {
 		return "home";
 	}
 
-	@RequestMapping("/index")
+	@RequestMapping("/Account")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-			stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
+			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
+			//stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
 			ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
 
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
-				output.add("Read from DB: " + rs.getTimestamp("tick"));
+				output.add(rs.getTimestamp("tick"));
 			}
 
 			model.put("records", output);
-			return "index";
+			return "Account";
 		} catch (Exception e) {
 			model.put("message", e.getMessage());
 			return "error";
