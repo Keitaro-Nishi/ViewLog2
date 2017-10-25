@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import src.main.java.com.example.Customer;
+import ViewLog.src.main.java.com.example.Customer;
 import src.main.java.com.example.CustomerRepository;
 
 @Service    // a
