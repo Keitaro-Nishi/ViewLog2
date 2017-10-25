@@ -13,8 +13,8 @@
 		class='table table-condensed table-hover table-striped'>
 		<thead>
 			<tr>
-				<th data-column-id='no' data-type='numeric' data-identifier='true'
-					data-width='10%'>No</th>
+				<!-- <th data-column-id='no' data-type='numeric' data-identifier='true'
+					data-width='10%'>No</th> -->
 				<th data-column-id='custid' data-width='20%'>ユーザーID</th>
 				<th data-column-id='custname' data-width='30%'>ユーザー名</th>
 				<th data-column-id='orgname' data-width='30%'>所属</th>
@@ -23,7 +23,7 @@
 		</thead>
 		<tbody>
 			<tr th:each="customer:${customers}">
-				<td th:text="${customer.no}">1</td>
+				<!-- <td th:text="${customer.no}">1</td> -->
 				<td th:text="${customer.custid}">2017/09/27</td>
 				<td th:text="${customer.custname}">11111</td>
 				<td th:text="${customer.orgname}">テスト</td>
