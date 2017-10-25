@@ -119,13 +119,14 @@ public class Main {
 	}
 	 */
 
-	@RequestMapping("/Account")
+	@RequestMapping("/index")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
 			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
 			//stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-			ArrayList<String> rs = stmt.executeQuery("SELECT custid, custname, orgname, reserve FROM userdata");
+			ArrayList<String> rs = new ArrayList<String>();
+			ResultSet rs = stmt.executeQuery("SELECT custid, custname, orgname, reserve FROM userdata");
 
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
@@ -133,7 +134,7 @@ public class Main {
 			}
 
 			model.put("customers", output);
-			return "Account";
+			return "index";
 		} catch (Exception e) {
 			model.put("message", e.getMessage());
 			return "error";
