@@ -1,6 +1,6 @@
 package com.example;
 
-import tools.springsample.springsample04.domain.Customer;
+import src.main.java.com.example.Customer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
