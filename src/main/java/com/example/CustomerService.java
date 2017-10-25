@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import tools.springsample.springsample04.domain.Customer;
-import tools.springsample.springsample04.repository.CustomerRepository;
+import src.main.java.com.example.Customer;
+import src.main.java.com.example.CustomerRepository;
 
 @Service    // a
 @Transactional    // b
