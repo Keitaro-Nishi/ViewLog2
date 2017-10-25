@@ -1,21 +1,28 @@
-/*
 package com.example;
 
-import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-//import com.example.LoginUser;
+import com.example.form.EchoForm;
 
-@Controller
-public class MenuController {
+@RequestMapping("/table")
+public class EchoController {
 
-    @RequestMapping(value = "/index")
-    public String index(@AuthenticationPrincipal LoginUser loginUser, Model model) {
-        // @AuthenticationPrincipalを使うと認証オブジェクトを参照できる。
+	@RequestMapping(method = RequestMethod.GET)
+	public String viewInput(Model model) {
 
-        return "/index";
-    }
+		List<String> nameList = new ArrayList<String>();
+		nameList.add("藤本祥");
+		nameList.add("中川淳一");
+		nameList.add("安倍隆弘");
+
+		model.addAttribute("nameList",nameList);
+
+		return "table";
+	}
 }
-*/
