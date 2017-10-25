@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import tools.springsample.springsample04.domain.Customer;
-import tools.springsample.springsample04.service.CustomerService;
+import src.main.java.com.example.Customer;
+import src.main.java.com.example.CustomerService;
 
 @RestController    // a
 @RequestMapping("api/customer")    // b
