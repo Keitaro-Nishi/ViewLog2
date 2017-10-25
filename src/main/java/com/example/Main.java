@@ -70,7 +70,7 @@ public class Main {
 		return "Home";
 	}
 
-	@RequestMapping("/signup")
+	@RequestMapping("/Account/signup")
 	String signup() {
 		return "signup";
 	}
