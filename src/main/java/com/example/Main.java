@@ -35,8 +35,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-//import org.springframework.data.jpa.repository.JpaRepository;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -119,27 +117,11 @@ public class Main {
 	}
 	 */
 
-	@RequestMapping("/index")
-	String db(Map<String, Object> model) {
-		try (Connection connection = dataSource.getConnection()) {
-			Statement stmt = connection.createStatement();
-			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-			//stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-			ArrayList<String> rs = new ArrayList<String>();
-			ResultSet rs = stmt.executeQuery("SELECT custid, custname, orgname, reserve FROM userdata");
-
-			ArrayList<String> output = new ArrayList<String>();
-			while (rs.next()) {
-				model.addAttribute("customers", Arrays.asList("custid", "custname", "orgname", "reserve"));
-			}
-
-			model.put("customers", output);
-			return "index";
-		} catch (Exception e) {
-			model.put("message", e.getMessage());
-			return "error";
-		}
-	}
+    @GetMapping("/index")
+    public String hello(Model model) {
+        model.addAttribute("list", Arrays.asList("SELECT custid, custname, orgname, reserve FROM userdata"));
+        return "index";
+    }
 
 	@Bean
 	@ConfigurationProperties("spring.datasource")
