@@ -19,7 +19,7 @@ public class CustomerService {
     public List<Customer> findAll() {    // e
         return repository.findAll();
     }
-
+/*
     // 顧客一件取得
     public Customer findOne(Integer id) {    // f
         return repository.findOne(id);
@@ -39,4 +39,5 @@ public class CustomerService {
     public void delete(Integer id) {    // i
         repository.delete(id);
     }
+*/
 }
