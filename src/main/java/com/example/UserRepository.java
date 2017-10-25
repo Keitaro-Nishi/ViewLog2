@@ -11,6 +11,5 @@ import com.example.User;
 public interface UserRepository extends JpaRepository<User, String> {
 
 	//public User getOne(String custname);
-
 }
 */
