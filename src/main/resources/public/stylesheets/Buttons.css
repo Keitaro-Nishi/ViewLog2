@@ -44,3 +44,11 @@ button.chrome{
 _::-webkit-full-page-media, _:future, :root button.Safari {
     margin-left: -4px;
 }
+
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
