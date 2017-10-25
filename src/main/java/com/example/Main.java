@@ -125,6 +125,7 @@ public class Main {
 			Statement stmt = connection.createStatement();
 			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
 			//stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
+			ArrayList<String> rs = new ArrayList<String>();
 			ResultSet rs = stmt.executeQuery("SELECT custid, custname, orgname, reserve FROM userdata");
 
 			ArrayList<String> output = new ArrayList<String>();
