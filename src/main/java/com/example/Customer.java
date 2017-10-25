@@ -19,6 +19,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor    // e
 public class Customer {
 
+    @Id
+    @GeneratedValue
+    private Integer no;
+
     @Column(nullable=false)
     private String custid;
 
