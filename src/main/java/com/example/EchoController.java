@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.form.EchoForm;
+import com.example.EchoForm;
 
 @RequestMapping("/table")
 public class EchoController {
