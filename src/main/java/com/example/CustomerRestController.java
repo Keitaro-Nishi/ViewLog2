@@ -1,3 +1,4 @@
+/*
 package com.example;
 
 import java.util.List;
@@ -53,5 +54,6 @@ public class CustomerRestController {
     public void deleteCustomer(@PathVariable Integer no) {
         service.delete(no);
     }
-*/
+
 }
+*/

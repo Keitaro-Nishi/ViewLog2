@@ -1,3 +1,4 @@
+/*
 package com.example;
 
 import java.util.List;
@@ -39,5 +40,6 @@ public class CustomerService {
     public void delete(Integer id) {    // i
         repository.delete(id);
     }
-*/
+
 }
+*/
