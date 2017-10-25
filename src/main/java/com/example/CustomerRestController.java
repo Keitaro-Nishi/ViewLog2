@@ -25,7 +25,7 @@ public class CustomerRestController {
     public List<Customer> getCustomer() {
         return service.findAll();
     }
-
+/*
     // 顧客一件取得
     @RequestMapping(method=RequestMethod.GET, value="{no}")    // f
     public Customer getCustomer(@PathVariable Integer no) {
@@ -53,4 +53,5 @@ public class CustomerRestController {
     public void deleteCustomer(@PathVariable Integer no) {
         service.delete(no);
     }
+*/
 }
