@@ -95,7 +95,7 @@ public class Main {
 	String home() {
 		return "home";
 	}
-
+	/*
 	@RequestMapping("/index")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
@@ -116,19 +116,19 @@ public class Main {
 			return "error";
 		}
 	}
+	 */
 
-/*
 	@RequestMapping("/Account")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
 			Statement stmt = connection.createStatement();
 			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
 			//stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-			ResultSet rs = stmt.executeQuery("SELECT custid FROM userdata");
+			ResultSet rs = stmt.executeQuery("SELECT custid, custname, orgname, reserve FROM userdata");
 
 			ArrayList<String> output = new ArrayList<String>();
 			while (rs.next()) {
-				output.add(rs.getString("custid"));
+				model.addAttribute("customers", Arrays.asList("custid", "custname", "orgname", "reserve"));
 			}
 
 			model.put("customers", output);
@@ -138,7 +138,7 @@ public class Main {
 			return "error";
 		}
 	}
-*/
+
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
