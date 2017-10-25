@@ -95,7 +95,7 @@ public class Main {
 	String home() {
 		return "home";
 	}
-/*
+
 	@RequestMapping("/index")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
@@ -116,7 +116,7 @@ public class Main {
 			return "error";
 		}
 	}
-*/
+
 /*
 	@RequestMapping("/Account")
 	String db(Map<String, Object> model) {
