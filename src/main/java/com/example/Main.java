@@ -117,6 +117,7 @@ public class Main {
 		}
 	}
 */
+	/*
 	@RequestMapping("/Account")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
@@ -137,7 +138,7 @@ public class Main {
 			return "error";
 		}
 	}
-
+*/
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
