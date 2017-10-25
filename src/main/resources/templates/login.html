@@ -15,7 +15,6 @@
 <body>
 	<div th:replace="fragments/layout2 :: header"></div>
 
-	<form class="myform">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-md-push-3 col-md-6">
@@ -23,9 +22,9 @@
 						<div class="text-center">
 							<h1>Login</h1>
 						</div>
-						<br />
+						<br/>
 						<form role="form" action="#" th:action="@{/login}" method="post"
-							id="login-form" autocomplete="off">
+							id="login-form" autocomplete="off" class="center-block">
 							<div class="form-group"
 								th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
 								<p class="form-control-static text-danger"
@@ -50,7 +49,6 @@
 				</div>
 			</div>
 		</div>
-	</form>
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
