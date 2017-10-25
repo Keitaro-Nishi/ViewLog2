@@ -44,6 +44,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -96,8 +97,20 @@ public class Main {
 	}
 
 	@RequestMapping("/table")
-	String table() {
-		return "table";
+	public class EchoController {
+
+	    @RequestMapping(method = RequestMethod.GET)
+	    public String viewInput(Model model) {
+
+	        List<String> nameList = new ArrayList<String>();
+	        nameList.add("藤本祥");
+	        nameList.add("中川淳一");
+	        nameList.add("安倍隆弘");
+
+	        model.addAttribute("nameList",nameList);
+
+	        return "table";
+	    }
 	}
 
 	@RequestMapping("/index")
