@@ -116,6 +116,28 @@ public class Main {
 			return "error";
 		}
 	}
+
+	@RequestMapping("/Account")
+	String db(Map<String, Object> model) {
+		try (Connection connection = dataSource.getConnection()) {
+			Statement stmt = connection.createStatement();
+			//stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
+			//stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM userdata");
+
+			ArrayList<String> output = new ArrayList<String>();
+			while (rs.next()) {
+				output.add(rs.getTimestamp("*"));
+			}
+
+			model.put("customers", output);
+			return "Account";
+		} catch (Exception e) {
+			model.put("message", e.getMessage());
+			return "error";
+		}
+	}
+
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
