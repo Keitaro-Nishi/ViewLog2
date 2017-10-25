@@ -17,7 +17,7 @@ public class EchoController {
 	public String viewInput(Model model) {
 
 		String name = new String();
-		name.add("藤本祥");
+		name = "藤本祥";
 		//nameList.add("中川淳一");
 		//nameList.add("安倍隆弘");
 
