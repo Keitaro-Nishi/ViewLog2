@@ -95,6 +95,11 @@ public class Main {
 		return "home";
 	}
 
+	@RequestMapping("/table")
+	String table() {
+		return "table";
+	}
+
 	@RequestMapping("/index")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
@@ -126,14 +131,4 @@ public class Main {
 			return new HikariDataSource(config);
 		}
 	}
-
-/*  Userクラス  */
-/*
-    public String user(ModelMap modelMap, HttpServletRequest httpServletRequest) {
-        String custname = httpServletRequest.getRemoteUser();
-        User user = UserRepository.getOne(custname);
-        modelMap.addAttribute("index", user);
-        return "index";
-    }
-*/
 }
