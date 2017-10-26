@@ -94,7 +94,7 @@ public class Main {
 	String home() {
 		return "home";
 	}
-	/*
+
 	@RequestMapping("/index")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
@@ -115,14 +115,14 @@ public class Main {
 			return "error";
 		}
 	}
-	 */
 
+/*
     @GetMapping("/index")
     public String hello(Model model) {
         model.addAttribute("list", Arrays.asList("SELECT custid, custname, orgname, reserve FROM userdata"));
         return "index";
     }
-
+*/
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
