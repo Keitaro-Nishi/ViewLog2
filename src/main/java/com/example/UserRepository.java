@@ -16,4 +16,4 @@ public interface UserRepository extends JpaRepository<User, String> {
 	//public User getOne(String custname);
 }
 
-*/ｓ
+*/
