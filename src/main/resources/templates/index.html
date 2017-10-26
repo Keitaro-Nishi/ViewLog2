@@ -1,17 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Hello Thymeleaf</title>
-    </head>
-    <body>
-        <ul>
-            <li th:each="element, status : ${list}">
-                custid = [[${status.custid}]],
-                custname = [[${status.custname}]],
-                orgname = [[${status.orgname}]],
-                reserve = [[${status.reserve}]],
-            </li>
-        </ul>
-    </body>
+<head th:replace="fragments/layout :: base_header(~{::link},'index')">
+<link href="/stylesheets/jquery.bootgrid.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/Buttons.css" />
+</head>
+<meta charset="UTF-8" />
+<title>Hello Thymeleaf</title>
+</head>
+<body>
+	<div th:replace="fragments/layout :: header"></div>
+	<div class="container">
+		<h1>Database Output</h1>
+		<ul th:each="record : ${records}">
+			<li th:text="${record}" />
+		</ul>
+	</div>
+
+</body>
 </html>
