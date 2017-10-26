@@ -1,3 +1,4 @@
+/*
 package com.example;
 
 import lombok.Data;
@@ -15,3 +16,4 @@ public class User {
 	private String role;
 	private String reserve;
 }
+*/
