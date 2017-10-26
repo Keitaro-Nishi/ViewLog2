@@ -62,7 +62,7 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.sql/jdbc-stdext -->
-	<dependency>
+		<dependency>
 			<groupId>javax.sql</groupId>
 			<artifactId>jdbc-stdext</artifactId>
 			<version>2.0</version>
@@ -111,7 +111,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>
-			<artifactId>jquery-ui</artifactId>
+			<artifactId>jquery-ui<ｚ/artifactId>
 			<version>${webjars-jquery-ui.version}</version>
 		</dependency>
 		<dependency>
@@ -136,19 +136,15 @@
 		</dependency>
 
 		<!-- User.java -->
+		<!-- <dependency> <groupId>javax.persistence</groupId> <artifactId>persistence-api</artifactId>
+			<version>1.0.2</version> </dependency> -->
+		<!-- JPA依存関係 -->
 <!--
 		<dependency>
-			<groupId>javax.persistence</groupId>
-			<artifactId>persistence-api</artifactId>
-			<version>1.0.2</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 -->
-		<!-- JPA依存関係 -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-
 	</dependencies>
 
 	<repositories>
