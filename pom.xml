@@ -122,7 +122,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-<!-- JPA 依存関係 -->
+<!-- JPA 依存関係
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -139,7 +139,7 @@
 			<artifactId>hibernate-hikaricp</artifactId>
 			<version>5.2.6.Final</version>
 		</dependency>
-
+-->
 	</dependencies>
 
 	<repositories>
