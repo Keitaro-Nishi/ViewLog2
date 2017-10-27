@@ -133,9 +133,9 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
-	</dependencies>
 -->
+	</dependencies>
+
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>
