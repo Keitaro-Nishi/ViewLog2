@@ -1,23 +1,46 @@
 package com.example;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.PrePersist;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+@Setter
+@Getter
 @Entity
 @Table(name="userdata")
 @Data    // a
 @AllArgsConstructor  // b
 @NoArgsConstructor // c
-public class User {
-
+public class User implements UserDetails{
+	
+	private static final long serialVersionUID = 1L;
+	
+	public enum Authority {USER, ADMIN};
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int no;
@@ -31,10 +54,25 @@ public class User {
 	@Column(name="orgname")
 	private String orgname;
 
+	@Column(name="password")
+	private String password;
+	
 	@Column(name="role")
 	private String role;
 
 	@Column(name="reserve")
 	private String reserve;
 
+    // JPA requirement
+    protected User() {}
+    
+    public User(String custid, String custname, String orgname, String password, String role, String reserve) {
+        this.custid = custid;
+    	this.custname = custname;
+    	this.orgname = orgname;
+        this.password = password;
+        this.role = role;
+        this.reserve = reserve;
+    }
+    
 }
