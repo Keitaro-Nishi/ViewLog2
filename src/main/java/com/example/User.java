@@ -79,11 +79,11 @@ public class User {
     }
 
     //@Override
-    public String getCustid() {
-        return custid;
+    public String getUsername() {
+        return username;
     }
-    public void setCustid(String custid) {
-        this.custid = custid;
+    public void setCustid(String username) {
+        this.username = username;
     }
 
     //@Override
