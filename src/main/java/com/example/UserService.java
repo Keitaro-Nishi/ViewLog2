@@ -26,10 +26,10 @@ public class UserService implements UserDetailsService{
 
 		@Autowired
 		private PasswordEncoder passwordEncoder;
+	}
+	// 顧客全件取得
+	public List<User> findAll() {    // e
+		return repository.findAll();
 
-		// 顧客全件取得
-		public List<User> findAll() {    // e
-			return repository.findAll();
-		}
 	}
 }
