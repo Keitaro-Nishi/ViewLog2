@@ -38,7 +38,7 @@ public class User {
 
     @Id
     @Column(name = "custid",nullable = false, unique = true)
-    private String custid;
+    private String username;
 
     @Column(name = "custname",nullable = false, unique = true)
     private String custname;
@@ -61,7 +61,7 @@ public class User {
 
     public User(int no,String custid, String custname, String orgname, String password ,String role,String reserve) {
     	this.no = no;
-    	this.custid = custid;
+    	this.username = custid;
     	this.custname = custname;
     	this.orgname = orgname;
         this.password = password;
