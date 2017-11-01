@@ -16,6 +16,11 @@ import com.example.UserRepository;
 @Transactional    // b
 public class UserService implements UserDetailsService{
 
+    @Override
+    public UserDetails loadUserByUsername(String username)
+            throws UsernameNotFoundException {
+
+    }
     @Autowired    // c
     private UserRepository repository;    // d
 
