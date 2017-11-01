@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Table;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -20,115 +21,109 @@ import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-@Setter
-@Getter
 @Entity
 @Table(name="userdata")
-@Data    // a
-@AllArgsConstructor  // b
-@NoArgsConstructor // c
-public class User implements UserDetails{
+public class User {
 
 	private static final long serialVersionUID = 1L;
 
-	public enum Authority {USER, ADMIN};
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int no;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "no",nullable = false)
+    private int no;
 
-	@Column(name="custid")
-	private String custid;
+    @Id
+    @Column(name = "custid",nullable = false, unique = true)
+    private String custid;
 
-	@Column(name="custname")
-	private String custname;
+    @Column(name = "custname",nullable = false, unique = true)
+    private String custname;
 
-	@Column(name="orgname")
-	private String orgname;
+    @Column(name = "orgname",nullable = false, unique = true)
+    private String orgname;
 
-	@Column(name="password")
-	private String password;
+    @Column(name = "password",nullable = false)
+    private String password;
 
-	@Column(name="role")
-	private String role;
+    @Column(name = "role",nullable = false)
+    private String role;
 
-	@Column(name="reserve")
-	private String reserve;
+    @Column(name = "reserve",nullable = false)
+    private String reserve;
 
-	// JPA requirement
-	protected User() {}
 
-	public User(String custid, String custname, String orgname, String password, String role, String reserve) {
-		this.custid = custid;
-		this.custname = custname;
-		this.orgname = orgname;
-		this.password = password;
-		this.role = role;
-		this.reserve = reserve;
-	}
+    // JPA requirement
+    protected User() {}
 
-	//@Override
-	public int getNo() {
-		return no;
-	}
-	public void setNo(int no) {
-		this.no = no;
-	}
+    public User(int no,String custid, String custname, String orgname, String password ,String role,String reserve) {
+    	this.no = no;
+    	this.custid = custid;
+    	this.custname = custname;
+    	this.orgname = orgname;
+        this.password = password;
+        this.role = role;
+        this.reserve = reserve;
+    }
 
-	//@Override
-	public String getCustid() {
-		return custid;
-	}
-	public void setCustid(String custid) {
-		this.custid = custid;
-	}
 
-	//@Override
-	public String getCustname() {
-		return custname;
-	}
-	public void setCustname(String custname) {
-		this.custname = custname;
-	}
+    //@Override
+    public int getNo() {
+        return no;
+    }
+    public void setNo(int no) {
+        this.no = no;
+    }
 
-	//@Override
-	public String getOrgname() {
-		return orgname;
-	}
-	public void setOrgname(String orgname) {
-		this.orgname = orgname;
-	}
+    //@Override
+    public String getCustid() {
+        return custid;
+    }
+    public void setCustid(String custid) {
+        this.custid = custid;
+    }
 
-	//@Override
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    //@Override
+    public String getCustname() {
+        return custname;
+    }
+    public void setCustname(String custname) {
+        this.custname = custname;
+    }
 
-	//@Override
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
+    //@Override
+    public String getOrgname() {
+        return orgname;
+    }
+    public void setOrgname(String orgname) {
+        this.orgname = orgname;
+    }
 
-	//@Override
-	public String getReserve() {
-		return role;
-	}
-	public void setReserve(String reserve) {
-		this.reserve = reserve;
-	}
+    //@Override
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    //@Override
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    //@Override
+    public String getReserve() {
+        return role;
+    }
+    public void setReserve(String reserve) {
+        this.reserve = reserve;
+    }
 
 }
