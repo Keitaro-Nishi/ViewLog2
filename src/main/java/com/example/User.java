@@ -82,7 +82,7 @@ public class User {
     public String getUsername() {
         return username;
     }
-    public void setCustid(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
