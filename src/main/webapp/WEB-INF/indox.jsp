@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
+<%@ page contentType="text/html; charset=euc-jp" %>
+<%
+// 内容: 時刻を表示する例
+ 
+// 現在の時刻を取得
+java.util.Date nowTime = new java.util.Date();
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Welcome</title>
-	</head> 
-	<body>
-		<c:url value="/showMessage.html" var="messageUrl" />
-		<a href="${messageUrl}">Click to enter</a>
-	</body>
+<head><title>時刻を出力する例</title></head>
+<body>
+<p>-- 時刻を出力する例 --</p>
+<p>
+現在の時刻は <strong><%= nowTime %></strong> です。
+</p>
+</body>
 </html>
