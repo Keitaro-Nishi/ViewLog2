@@ -110,9 +110,9 @@ public class Main {
 
 	@RequestMapping("/indox")
 	String indox() {
-		return "indox";
+		return "indox.jsp";
 	}
-	
+
 	@RequestMapping("/index")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
