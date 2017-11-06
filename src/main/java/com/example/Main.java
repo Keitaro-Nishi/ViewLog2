@@ -108,6 +108,11 @@ public class Main {
 		return "home";
 	}
 
+	@RequestMapping("/indox")
+	String indox() {
+		return "indox";
+	}
+	
 	@RequestMapping("/index")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
