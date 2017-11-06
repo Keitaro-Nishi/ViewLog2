@@ -1,7 +1,7 @@
-<%@ page contentType="text/html; charset=euc-jp" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%
 // 内容: 時刻を表示する例
- 
+
 // 現在の時刻を取得
 java.util.Date nowTime = new java.util.Date();
 %>
