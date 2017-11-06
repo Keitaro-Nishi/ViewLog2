@@ -11,6 +11,7 @@
             base-package="org.springframework.samples.web"/>  -->
 
 
+
     <mvc:annotation-driven />
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

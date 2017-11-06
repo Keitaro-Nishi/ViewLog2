@@ -23,7 +23,7 @@
 		<webjars-jquery.version>2.2.4</webjars-jquery.version>
 		<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
 
-				<!-- Web -->
+		<!-- Web -->
 		<jsp.version>2.2</jsp.version>
 		<jstl.version>1.2</jstl.version>
 		<servlet.version>2.5</servlet.version>
