@@ -41,6 +41,7 @@ import java.util.Map;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+	/*
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 
@@ -58,20 +59,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.usersByUsernameQuery(USER_QUERY)
 		.authoritiesByUsernameQuery(ROLE_QUERY);
 	}
+	 */
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-		.antMatchers("/login").permitAll()
-		.antMatchers("/").hasAnyAuthority("ADMIN","USER")
+		.antMatchers("/").permitAll()
+		.antMatchers("/login").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/Home").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/Account").hasAuthority("ADMIN")
 		.antMatchers("/logout").hasAnyAuthority("ADMIN","USER")
 		//.antMatchers("/User/**").hasAuthority("ADMIN")
 		.and()
 		.formLogin()
-		.loginPage("/login");
+		.loginPage("/");
 		http.formLogin()
 		.defaultSuccessUrl("/Home", true)
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
@@ -83,6 +85,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.disable();
 	}
 
+	@Autowired
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication()
+		.withUser("hoge").password("HOGE").roles("USER");
+	}
+
+	/*
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
@@ -98,4 +107,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public PasswordEncoder passwordEncoder() {
 	    return new BCryptPasswordEncoder();
 	}
+	 */
+
 }
