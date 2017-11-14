@@ -30,7 +30,7 @@ import java.util.Map;
 
 @Controller
 @SpringBootApplication
-public class Main {
+public class SecurityConfig {
 
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
@@ -39,7 +39,7 @@ public class Main {
 	private DataSource dataSource;
 
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(Main.class, args);
+		SpringApplication.run(SecurityConfig.class, args);
 	}
 
 	@RequestMapping({"/","/login"})
