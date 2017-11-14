@@ -1,81 +1,98 @@
+package com.example;
+
+/*
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import org.springframework.stereotype.Controller;
+*/
+
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Map;
 
-@Controller
-@SpringBootApplication
-public class SecurityConfig {
+//@Controller
+//@SpringBootApplication
 
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+	/*
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 
 	@Autowired
+	@Qualifier("dataSource")
 	private DataSource dataSource;
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SecurityConfig.class, args);
+	private static final String USER_QUERY = "SELECT custid, password,role FROM userdata WHERE custid = ?";
+	private static final String ROLE_QUERY = "SELECT custid, reserve FROM userdata WHERE custid = ?";
+
+	@Override
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.jdbcAuthentication()
+		.dataSource(dataSource)
+		.usersByUsernameQuery(USER_QUERY)
+		.authoritiesByUsernameQuery(ROLE_QUERY);
+	}
+	 */
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http
+		.authorizeRequests()
+		.antMatchers("/").permitAll()
+		.antMatchers("/login").hasAnyAuthority("ADMIN","USER")
+		.antMatchers("/Home").permitAll()
+		.antMatchers("/Account").hasAuthority("ADMIN")
+		.antMatchers("/logout").hasAnyAuthority("ADMIN","USER")
+		//.antMatchers("/User/**").hasAuthority("ADMIN")
+		.and()
+		.formLogin()
+		.loginPage("/");
+		http.formLogin()
+		.defaultSuccessUrl("/Home", true)
+		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		.logoutSuccessUrl("/")
+		.deleteCookies("JSESSIONID")
+		.invalidateHttpSession(true).permitAll()
+		.and()
+		.csrf()
+		.disable();
 	}
 
-	@RequestMapping({"/","/login"})
-	String login() {
-		return "login";
+	//@Autowired
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication()
+		.withUser("hoge").password("HOGE").roles("ADMIN");
 	}
 
-
-
-	@EnableWebSecurity
-	public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-		@Override
-		protected void configure(HttpSecurity http) throws Exception {
-			http
-			.authorizeRequests()
-			.antMatchers("/", "/login").permitAll()
-			.antMatchers("/**").hasRole("USER")
-			.antMatchers("/index/**").hasRole("ADMIN")
-			.and()
-			.formLogin()
-			.loginPage("/login");
-			http.formLogin()
-			.defaultSuccessUrl("/Home", true)
-			.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-			.logoutSuccessUrl("/")
-			.deleteCookies("JSESSIONID")
-			.invalidateHttpSession(true).permitAll();
+	/*
+	@Bean
+	@ConfigurationProperties("spring.datasource")
+	public DataSource dataSource() throws SQLException {
+		if (dbUrl == null || dbUrl.isEmpty()) {
+			return new HikariDataSource();
+		} else {
+			HikariConfig config = new HikariConfig();
+			config.setJdbcUrl(dbUrl);
+			return new HikariDataSource(config);
 		}
-
-		@Autowired
-		public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-			auth
-			.inMemoryAuthentication()
-			.withUser("user").password("pass").roles("USER");
-		}
-
 	}
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+	    return new BCryptPasswordEncoder();
+	}
+	 */
+
 }
+
