@@ -1,3 +1,4 @@
+/*
 package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -133,7 +134,7 @@ public class Main {
 			return "error";
 		}
 	}
-
+*/
 /*
     @GetMapping("/index")
     public String hello(Model model) {
@@ -141,6 +142,7 @@ public class Main {
         return "index";
     }
 */
+/*
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
@@ -153,3 +155,4 @@ public class Main {
 		}
 	}
 }
+*/
