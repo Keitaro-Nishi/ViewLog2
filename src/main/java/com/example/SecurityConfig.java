@@ -59,7 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.formLogin()
 		.loginPage("/");
 		http.formLogin()
-		.defaultSuccessUrl("/Home", true)
+		.defaultSuccessUrl("viewlog66.herokuapp.com/Home", true)
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		.logoutSuccessUrl("/")
 		.deleteCookies("JSESSIONID")
