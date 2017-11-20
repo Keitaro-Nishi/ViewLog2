@@ -1,23 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout2 :: base_header(~{::link},'index')">
+<link href="/stylesheets/jquery.bootgrid.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="/stylesheets/Buttons.css" />
 
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<style>
+.myform {
+	width: 730px;
+	margin: 0 auto;
+}
+</style>
 
-	<!-- Uncomment and your base-package here: <context:component-scan base-package="org.springframework.samples.web"/> -->
+</head>
+<body>
+	<div th:replace="fragments/layout :: header"></div>
+	<div align="center">
+	<br>
+	<br>
+	<br>
+	<br>
+		<button onclick="location.href='/logview'" class="button5" type="submit">チャットボットログ</button>
+		<br>
+		<br>
+		<br>
+		<button onclick="location.href='/logview'" class="button5" type="submit">フォトログ</button>
+		<br>
+		<br>
+		<br>
+		<button onclick="location.href='/viewlog/logout'" class="button5" type="submit">ランキング</button>
+		<br>
+		<br>
+		<br>
+		<button onclick="location.href='/Account'" class="button5 chrome Safari" type="submit">アカウント管理</button>
+	</div>
 
-	<context:component-scan base-package="viewlog"></context:component-scan>
-
-	<mvc:annotation-driven />
-
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
-		<property name="prefix" value="/WEB-INF/view/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
-
-</beans>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
