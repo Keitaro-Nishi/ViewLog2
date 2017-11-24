@@ -112,7 +112,7 @@ public class Main {
 	String indox() {
 		return "indox.jsp";
 	}
-
+/*
 	@RequestMapping("/index")
 	String db(Map<String, Object> model) {
 		try (Connection connection = dataSource.getConnection()) {
@@ -133,7 +133,7 @@ public class Main {
 			return "error";
 		}
 	}
-	
+	*/
 	/*
     @GetMapping("/index")
     public String hello(Model model) {
