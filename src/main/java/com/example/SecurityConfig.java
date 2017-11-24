@@ -17,10 +17,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	
-	@Value("${spring.datasource.url}")
-	private String dbUrl;
-
 	@Autowired
 	@Qualifier("dataSource")
 	private DataSource dataSource;
