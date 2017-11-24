@@ -60,15 +60,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.csrf()
 		.disable();
 	}
-
+/*
 	//@Autowired
 	@Override
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
 		.withUser("hoge").password("HOGE").roles("ADMIN");
 	}
-
-	/*
+*/
 	@Bean
 	@ConfigurationProperties("spring.datasource")
 	public DataSource dataSource() throws SQLException {
@@ -84,6 +83,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public PasswordEncoder passwordEncoder() {
 	    return new BCryptPasswordEncoder();
 	}
-	 */
-
 }
