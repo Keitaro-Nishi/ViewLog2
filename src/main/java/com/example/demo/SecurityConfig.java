@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
     @Autowired
     private UserService userService;
-
+/*
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 	@Autowired
@@ -59,7 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.usersByUsernameQuery(USER_QUERY)
 		.authoritiesByUsernameQuery(ROLE_QUERY);
 	}
-	
+*/	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
